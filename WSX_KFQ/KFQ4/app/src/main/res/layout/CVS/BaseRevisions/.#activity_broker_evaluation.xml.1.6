@@ -1,0 +1,201 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/content_bg"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:paddingBottom="20dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+
+    <View
+        android:id="@+id/top_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider_font_tint" />
+
+
+    <LinearLayout
+        android:id="@+id/broker_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_line"
+        android:layout_marginTop="14dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_weight="1"
+            android:background="@color/divider_font_tint" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+            android:text="完成看房"
+            android:textColor="@color/divider_font_mid" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_weight="1"
+            android:background="@color/divider_font_tint" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/item_broker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/broker_title"
+        android:paddingTop="10dp">
+
+        <ImageView
+            android:id="@+id/broker_img"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="5dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/matebroker_iv" />
+
+        <TextView
+            android:id="@+id/broker_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/broker_img"
+            android:layout_below="@+id/trans_status"
+            android:layout_marginLeft="6dp"
+            android:textStyle="bold"
+            android:layout_toRightOf="@id/broker_img"
+            android:text="刘诗诗"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/introduce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/broker_name"
+            android:layout_below="@id/broker_name"
+            android:layout_marginTop="3dp"
+            android:text="职业经纪人 (10年)"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/broker_name"
+            android:layout_below="@+id/introduce"
+            android:layout_marginTop="3dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RatingBar
+                android:id="@+id/broker_star"
+                style="@style/kfqRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:rating="4.5" />
+
+            <TextView
+                android:id="@+id/broker_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="6dp"
+                android:background="@drawable/button_divider_bg_select"
+                android:text="4.8"
+                android:textColor="@color/divider_font_mid"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/order_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:drawableRight="@drawable/broker_ok_arrow"
+            android:text="订单详情 "
+            android:textColor="@color/divider_font_mid"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/broker_evaluation_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_broker"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_weight="1"
+            android:background="@color/divider_font_tint" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="匿名评价给经纪人"
+            android:textColor="@color/divider_font_mid" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_weight="1"
+            android:background="@color/divider_font_tint" />
+    </LinearLayout>
+
+
+    <RatingBar
+        android:id="@+id/broker_evaluation_star"
+        style="@style/evaluation_ratingbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/broker_evaluation_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:numStars="5"
+        android:rating="5"
+        android:stepSize="0.1" />
+
+    <EditText
+        android:id="@+id/broker_evaluation_et"
+        android:layout_width="fill_parent"
+        android:layout_height="140dp"
+        android:layout_below="@id/broker_evaluation_star"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/edittext_divider_bg"
+        android:gravity="top"
+        android:hint="填写一下你对经纪人的感受吧，对他人帮助很大哦 (可填)"
+        android:padding="10dp"
+        android:textColor="@color/divider_font_mid"
+        android:textColorHint="@color/divider_font_tint" />
+
+
+    <Button
+        android:id="@+id/broker_evaluation_bt"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/button_divider_bg_select"
+        android:text="确认"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="18sp" />
+
+</RelativeLayout>

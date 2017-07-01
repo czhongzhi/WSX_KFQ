@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/content_bg"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    tools:context="com.inetgoes.fangdd.activity.MyYuyueActivity">
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/content_bg"
+        android:cacheColorHint="#00000000"
+        android:divider="@color/content_bg"
+        android:dividerHeight="0dp"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="none"
+        android:smoothScrollbar="true"
+
+
+        ptr:ptrAnimationStyle="flip"
+        ptr:ptrDrawable="@drawable/default_ptr_flip"
+        ptr:ptrHeaderBackground="@color/divider_font_tint"
+        ptr:ptrHeaderTextColor="@color/floor_item_text_black" />
+
+</RelativeLayout>
+

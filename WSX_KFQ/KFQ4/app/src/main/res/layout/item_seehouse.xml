@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/broker_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/defaut_img" />
+
+        <TextView
+            android:id="@+id/broker_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/broker_icon"
+            android:text="刘诗诗"
+            android:textColor="@color/divider_font_mid" />
+
+        <RatingBar
+            android:id="@+id/broker_star"
+            style="@style/kfqRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:rating="4.5" />
+
+        <TextView
+            android:id="@+id/broker_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dp"
+            android:background="@drawable/button_divider_bg_select"
+            android:text="4.8"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/trans_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:drawableRight="@drawable/broker_ok_arrow"
+            android:text="待看房 "
+            android:textColor="@color/divider_font_red"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider_font_tint" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/loupen_icon"
+            android:layout_width="105dp"
+            android:layout_height="80dp"
+            android:src="@drawable/defaut_img" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp">
+
+            <TextView
+                android:id="@+id/loupen_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="前海时代.CEO公馆"
+                android:textColor="@color/divider_font"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/loupen_title"
+                android:layout_marginTop="4dp"
+                android:layout_centerVertical="true"
+                android:singleLine="true"
+                android:text="最好的时光在路上，最美的自己"
+                android:textColor="@color/divider_font_mid" />
+
+            <TextView
+                android:id="@+id/loupen_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:drawableRight="@drawable/broker_ok_arrow"
+                android:text="88000/平 "
+                android:textColor="@color/divider_font_red" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="4dp"
+                android:singleLine="true"
+                android:text=""
+                android:gravity="right"
+                android:textColor="@color/divider_font_mid" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider_font_tint" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/lookhouse"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/edittext_divider_bg_select"
+            android:gravity="center"
+            android:padding="6dp"
+            android:text="确认看房"
+            android:textColor="@color/divider_font_mid" />
+
+        <TextView
+            android:id="@+id/dingdandeal"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/lookhouse"
+            android:background="@drawable/edittext_divider_bg_select"
+            android:gravity="center"
+            android:padding="6dp"
+            android:text="申请取消"
+            android:textColor="@color/divider_font_mid" />
+
+    </RelativeLayout>
+
+</LinearLayout>

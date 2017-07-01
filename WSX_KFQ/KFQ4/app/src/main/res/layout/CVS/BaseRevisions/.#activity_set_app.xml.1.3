@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/content_bg"
+    android:orientation="vertical"
+    tools:context="com.inetgoes.fangdd.activity.SetAppActivity">
+
+    <include
+        android:id="@+id/set_layout_mess"
+        layout="@layout/layout_set_normal" />
+
+    <include
+        android:id="@+id/set_layout_version"
+        layout="@layout/layout_set_normal" />
+
+    <include
+        android:id="@+id/set_layout_cache"
+        layout="@layout/layout_set_cache" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/set_layout_opinion"
+            layout="@layout/layout_set_normal" />
+
+        <include
+            android:id="@+id/set_layout_contact"
+            layout="@layout/layout_set_normal" />
+
+        <include
+            android:id="@+id/set_layout_about"
+            layout="@layout/layout_set_normal" />
+
+        <include
+            android:id="@+id/set_layout_help"
+            layout="@layout/layout_set_normal" />
+
+        <include
+            android:id="@+id/set_layout_law"
+            layout="@layout/layout_set_normal" />
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/out_login"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/button_divider_bg_select"
+            android:text="退出登录"
+            android:textColor="@color/divider_font_mid" />
+
+    </RelativeLayout>
+
+</LinearLayout>

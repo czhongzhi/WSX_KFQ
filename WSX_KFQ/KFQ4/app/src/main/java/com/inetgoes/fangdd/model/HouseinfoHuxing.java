@@ -1,0 +1,82 @@
+package com.inetgoes.fangdd.model;
+
+import java.io.Serializable;
+
+/**
+ * Created by czz on 2015/11/20.
+ */
+public class HouseinfoHuxing implements Serializable {
+    private Long id;
+
+    private String newcode;
+
+    private String huxing_type;
+
+    private String huxing_desc;
+
+    private Integer huxing_size;
+
+    private String huxing_imageurl;
+
+    private String extrainfo;
+
+    public HouseinfoHuxing() {
+
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNewcode() {
+        return newcode;
+    }
+
+    public void setNewcode(String newcode) {
+        this.newcode = newcode;
+    }
+
+    public String getHuxing_type() {
+        return huxing_type;
+    }
+
+    public void setHuxing_type(String huxing_type) {
+        this.huxing_type = huxing_type;
+    }
+
+    public String getHuxing_desc() {
+        return huxing_desc;
+    }
+
+    public void setHuxing_desc(String huxing_desc) {
+        this.huxing_desc = huxing_desc;
+    }
+
+    public Integer getHuxing_size() {
+        return huxing_size;
+    }
+
+    public void setHuxing_size(Integer huxing_size) {
+        this.huxing_size = huxing_size;
+    }
+
+    public String getHuxing_imageurl() {
+        return huxing_imageurl;
+    }
+
+    public void setHuxing_imageurl(String huxing_imageurl) {
+        this.huxing_imageurl = huxing_imageurl;
+    }
+
+    public String getExtrainfo() {
+        return extrainfo;
+    }
+
+    public void setExtrainfo(String extrainfo) {
+        this.extrainfo = extrainfo;
+    }
+}

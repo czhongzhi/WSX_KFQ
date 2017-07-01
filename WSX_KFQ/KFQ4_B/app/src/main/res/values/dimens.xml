@@ -1,0 +1,13 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    
+    <dimen name="titlebar_height">50dp</dimen>
+    
+    <!--字体大小-->
+    <dimen name="app_normal_size">16sp</dimen>
+    <dimen name="app_18sp">18sp</dimen>
+    <dimen name="app_main_num">20sp</dimen>
+    <dimen name="app_register">12sp</dimen>
+</resources>

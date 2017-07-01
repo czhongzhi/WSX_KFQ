@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/user_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/defaut_img" />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/user_icon"
+            android:text="刘诗诗"
+            android:textColor="@color/divider_font_mid" />
+
+        <!--<RatingBar-->
+        <!--android:id="@+id/broker_star"-->
+        <!--style="@style/kfqRatingBar"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="6dp"-->
+        <!--android:isIndicator="true"-->
+        <!--android:numStars="5"-->
+        <!--android:rating="4.5" />-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/broker_score"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center_vertical"-->
+        <!--android:layout_marginLeft="6dp"-->
+        <!--android:background="@drawable/button_divider_bg_select"-->
+        <!--android:text="4.8"-->
+        <!--android:textColor="@color/divider_font_mid"-->
+        <!--android:textSize="12sp" />-->
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/trans_status"
+                android:layout_gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:drawableRight="@drawable/broker_ok_arrow"
+                android:text="待看房 "
+                android:textColor="@color/divider_font_red"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/trans_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2015-11-3"
+                android:textColor="@color/divider_font_tint"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider_font_tint" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:orientation="horizontal"
+            android:weightSum="2.5">
+
+            <TextView
+                android:id="@+id/mate_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="楼盘 幸福城"
+                android:textColor="@color/divider_font_tint"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/mate_huxing"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="户型 二室"
+                android:textColor="@color/divider_font_tint"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:orientation="horizontal"
+            android:weightSum="2.5">
+
+            <TextView
+                android:id="@+id/mate_area"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="区域 龙华新区"
+                android:textColor="@color/divider_font_tint"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/mate_peitao"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="配套 交通"
+                android:textColor="@color/divider_font_tint"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:orientation="horizontal"
+            android:weightSum="2.5">
+
+            <TextView
+                android:id="@+id/mate_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.5"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="总价 200~500万"
+                android:textColor="@color/divider_font_tint"
+                android:textSize="16sp" />
+
+            <!--<TextView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:ellipsize="end"-->
+            <!--android:singleLine="true"-->
+            <!--android:text="户型 二室"-->
+            <!--android:textColor="@color/divider_font_tint"-->
+            <!--android:textSize="16sp" />-->
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider_font_tint" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/call_phone"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/edittext_divider_bg_select"
+            android:gravity="center"
+            android:padding="6dp"
+            android:text="拨打电话"
+            android:textColor="@color/divider_font_mid" />
+
+        <TextView
+            android:id="@+id/send_msg"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/call_phone"
+            android:background="@drawable/edittext_divider_bg_select"
+            android:gravity="center"
+            android:padding="6dp"
+            android:text="发送消息"
+            android:textColor="@color/divider_font_mid" />
+
+    </RelativeLayout>
+
+</LinearLayout>

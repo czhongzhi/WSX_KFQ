@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">看房去专家</string>
+    <string name="action_settings">设置</string>
+    <string name="title_activity_login">登录页面</string>
+    <string name="title_activity_guide">broker引导</string>
+    <string name="title_activity_regist">注册</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_regist_two">注册第二页</string>
+    <string name="title_activity_registsuccess">注册成功</string>
+    <string name="title_activity_main">主页</string>
+    <string name="regist_protocol"><u>法律声明和隐私政策</u></string>
+    <string name="title_activity_re_password">重设密码</string>
+    <string name="title_activity_re_password_success">重设密码成功</string>
+    <string name="title_activity_set_broker_info_main">设置经纪人信息主页</string>
+    <string name="title_activity_upload_house_source_main">更新房源主页</string>
+    <string name="title_activity_upload_house_source_two">更新房源第二页</string>
+    <string name="title_activity_upload_house_source_three">更新房源第三页</string>
+    <string name="title_activity_house_source_preview">房源预览</string>
+    <string name="title_activity_house_source_list">我的房源</string>
+    <string name="title_activity_set_app">设置</string>
+    <string name="title_activity_set_law">法律条款</string>
+    <string name="title_activity_set_message">消息设置</string>
+    <string name="contact_we_gongsi">深圳市点房科技有限公司</string>
+    <string name="contact_we_phone">电话：400-088-7580</string>
+    <string name="contact_we_email">kanfangqu@inetgoes.com</string>
+    <string name="contact_we_addr">地址：深圳市宝安区翠岭华庭鼎曦大厦</string>
+    <string name="title_activity_my_yu_yue">我的预约</string>
+    <string name="title_activity_notify">通知</string>
+    <string name="guide_text_two">一键抢单，客源保护</string>
+    <string name="guide_text_three">客户精准，快速成交</string>
+    <string name="guide_text_four">星级评价，个人品牌</string>
+    <string name="title_activity_select_huxing">选择推送楼盘的户型</string>
+    <string name="title_activity_backup">备份用户信息</string>
+    <string name="title_activity_backup_set">编辑客户资料</string>
+    <string name="title_activity_about_kfq">关于看房去专家</string>
+    <string name="title_activity_see_plan">查看进度</string>
+    <string name="title_activity_my_asset_main">我的资产</string>
+    <string name="title_activity_my_asset_detail">佣金明细</string>
+    <string name="title_activity_my_asset_history">历史记录</string>
+    <string name="title_activity_add_client">添加客户</string>
+
+</resources>

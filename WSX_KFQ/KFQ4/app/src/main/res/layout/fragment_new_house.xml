@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context="com.inetgoes.fangdd.fragment.NewHouseFragment">
+
+    <LinearLayout
+        android:layout_width="94dp"
+        android:layout_height="94dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/main_round"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/home_people" />
+
+        <TextView
+            android:id="@+id/brokernum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="*"
+            android:textColor="@color/mate_color"
+            android:textSize="@dimen/app_main_num" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/brokernum_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:text="当前有**房产专家在线"
+        android:textColor="@color/divider_font"
+        android:textSize="@dimen/app_normal_size" />
+
+    <LinearLayout
+        android:layout_width="94dp"
+        android:layout_height="94dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/main_round"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/housenum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*"
+            android:textColor="@color/mate_color"
+            android:textSize="@dimen/app_main_num" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/housenum_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:text="共发布**个楼盘"
+        android:textColor="@color/divider_font"
+        android:textSize="@dimen/app_normal_size" />
+
+</LinearLayout>

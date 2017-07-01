@@ -1,0 +1,337 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/content_bg"
+    android:scrollbars="none"
+    tools:context="com.inetgoes.kfqbrokers.activity.UploadHouseSourceTwoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/ed_project_name"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_select_bg"
+            android:hint="项目名称"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/divider_font_tint" />
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="12dp">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager_house_photolist"
+                android:layout_width="fill_parent"
+                android:layout_height="240dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_house_photo_btn"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/broker_item_info"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="45dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/join_pic" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="30dp"
+                    android:text="楼盘照片(可多选)"
+                    android:textColor="@color/divider_font_tint"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/point_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_house_photo_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:layout_marginBottom="15dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/join_delete" />
+
+        </FrameLayout>
+
+        <EditText
+            android:id="@+id/ed_house_price"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edittext_select_bg"
+            android:hint="均价"
+            android:inputType="number"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/divider_font_tint" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="10dp"
+            android:background="@color/divider_font_tint" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="10dp"
+                android:text="项目地址"
+                android:textColor="@color/divider_font"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:paddingLeft="4dp"
+                    android:text="省份"
+                    android:textColor="@color/divider_font"
+                    android:textSize="18sp" />
+
+                <RelativeLayout
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3">
+
+                    <TextView
+                        android:id="@+id/tv_province"
+                        android:layout_width="match_parent"
+                        android:layout_height="41dp"
+                        android:background="@drawable/broker_item_info"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:text="请选择"
+                        android:textColor="@color/divider_font_tint"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/join_more" />
+                </RelativeLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:paddingLeft="4dp"
+                    android:text="    市"
+                    android:textColor="@color/divider_font"
+                    android:textSize="18sp" />
+
+                <RelativeLayout
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3">
+
+                    <TextView
+                        android:id="@+id/tv_city"
+                        android:layout_width="match_parent"
+                        android:layout_height="41dp"
+                        android:background="@drawable/broker_item_info"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:text="请选择"
+                        android:textColor="@color/divider_font_tint"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/join_more" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:paddingLeft="4dp"
+                    android:text="区/县"
+                    android:textColor="@color/divider_font"
+                    android:textSize="18sp" />
+
+                <RelativeLayout
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3">
+
+                    <TextView
+                        android:id="@+id/tv_area"
+                        android:layout_width="match_parent"
+                        android:layout_height="41dp"
+                        android:background="@drawable/broker_item_info"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:text="请选择"
+                        android:textColor="@color/divider_font_tint"
+                        android:textSize="18dp" />
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/join_more" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/ed_address"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_select_bg"
+                android:hint="详细地址"
+                android:paddingLeft="10dp"
+                android:textColorHint="@color/divider_font_tint" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="10dp"
+            android:background="@color/divider_font_tint" />
+
+
+        <!--<com.inetgoes.kfqbrokers.view.MyGridView-->
+        <!--android:id="@+id/gridview_housesource_type"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="16dp"-->
+        <!--android:layout_marginRight="16dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:columnWidth="100dp"-->
+        <!--android:gravity="center"-->
+        <!--android:horizontalSpacing="2dp"-->
+        <!--android:listSelector="@android:color/transparent"-->
+        <!--android:numColumns="3"-->
+        <!--android:scrollbars="none"-->
+        <!--android:stretchMode="columnWidth"-->
+        <!--android:verticalSpacing="2dp">-->
+        <!--</com.inetgoes.kfqbrokers.view.MyGridView>-->
+
+        <com.inetgoes.kfqbrokers.view.MyListView
+            android:id="@+id/listView_housesource_type"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="16dp"
+            android:divider="@color/transparent"
+            android:dividerHeight="0dp"
+            android:listSelector="@color/transparent">
+
+        </com.inetgoes.kfqbrokers.view.MyListView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingBottom="14dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="6dp">
+
+            <Button
+                android:id="@+id/housesource_two_nextbtn"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/button_select_bg"
+                android:text="下一步"
+                android:textColor="@color/divider_font_mid"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

@@ -1,0 +1,264 @@
+package com.inetgoes.fangdd.IM_Util;
+
+import android.util.Log;
+
+import org.jivesoftware.smack.ConnectionConfiguration;
+import org.jivesoftware.smack.PacketCollector;
+import org.jivesoftware.smack.SmackConfiguration;
+import org.jivesoftware.smack.SmackException;
+import org.jivesoftware.smack.XMPPException;
+import org.jivesoftware.smack.chat.Chat;
+import org.jivesoftware.smack.chat.ChatManager;
+import org.jivesoftware.smack.chat.ChatManagerListener;
+import org.jivesoftware.smack.chat.ChatMessageListener;
+import org.jivesoftware.smack.filter.AndFilter;
+import org.jivesoftware.smack.filter.PacketIDFilter;
+import org.jivesoftware.smack.filter.PacketTypeFilter;
+import org.jivesoftware.smack.filter.StanzaFilter;
+import org.jivesoftware.smack.packet.IQ;
+import org.jivesoftware.smack.packet.Message;
+import org.jivesoftware.smack.tcp.XMPPTCPConnection;
+import org.jivesoftware.smack.tcp.XMPPTCPConnectionConfiguration;
+import org.jivesoftware.smackx.iqregister.AccountManager;
+import org.jivesoftware.smackx.iqregister.packet.Registration;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Created by czz on 2015/11/24.
+ * 即时聊天类封装 smack4.1.1包
+ */
+public class XmppUtil {
+    private static final String TAG = XmppUtil.class.getName();
+
+    public static int SERVER_PORT = 5222;
+    public static String SERVER_HOST = "192.168.1.29";//115.28.208.92
+    public static String SERVER_NAME = "zhouchunlin";//ay140306172311942d68z
+
+    private static XMPPTCPConnection connection;
+    private static ChatManager chatManager;
+    private static XmppUtil xmppUtil = new XmppUtil();
+
+    private TaxiConnectionListener connectionListener = new TaxiConnectionListener();
+
+    /**
+     * 单例模式
+     *
+     * @return
+     */
+    synchronized public static XmppUtil getInstance() {
+        return xmppUtil;
+    }
+
+    /**
+     * 创建连接
+     */
+    public XMPPTCPConnection getConnection() {
+        if (connection == null) {
+            openConnection();
+        }
+        return connection;
+    }
+
+    /**
+     * 打开连接
+     */
+    public boolean openConnection() {
+        if (null == connection || !connection.isAuthenticated()) {
+            // 配置连接
+            XMPPTCPConnectionConfiguration.Builder builder = XMPPTCPConnectionConfiguration.builder();
+            builder.setSecurityMode(ConnectionConfiguration.SecurityMode.disabled);
+            XMPPTCPConnectionConfiguration config = builder
+                    .setServiceName(SERVER_NAME)
+                    .setHost(SERVER_HOST)
+                    .setResource("android")
+                    .setSendPresence(true)
+                    .setPort(SERVER_PORT).build();
+
+            connection = new XMPPTCPConnection(config);
+            try {
+                connection.connect();
+                Log.e(TAG, "conn 连接");
+            } catch (SmackException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (XMPPException e) {
+                e.printStackTrace();
+            }
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * 关闭连接
+     */
+    public void closeConnection() {
+        if (getConnection() != null) {
+            connection.removeConnectionListener(connectionListener);//移除连接监听器
+            if (connection.isConnected())
+                connection.disconnect();
+            connection = null;
+        }
+        Log.e(TAG, "conn 关闭连接");
+    }
+
+    /**
+     * 登录
+     *
+     * @param account  登录帐号
+     * @param password 登录密码
+     * @return
+     */
+    public boolean login(String account, String password) {
+        if (getConnection() != null) {
+            try {
+                getConnection().login(account, password);
+                getConnection().addConnectionListener(connectionListener); //给连接设置监听器
+                Log.i(TAG, "conn 用户登录");
+                return true;
+            } catch (XMPPException e) {
+                e.printStackTrace();
+            } catch (SmackException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 注册
+     *
+     * @param account  注册帐号
+     * @param password 注册密码
+     * @return 1、注册成功 0、服务器没有返回结果2、这个账号已经存在3、注册失败
+     */
+    public int regist(String account, String password) {
+        if (getConnection() == null) {
+            return 0;
+        }
+        try {
+            Map<String, String> map = new HashMap<>();
+            map.put("username", account);
+            map.put("password", password);
+            Registration reg = new Registration(map);
+            reg.setType(IQ.Type.set);
+            reg.setTo(SERVER_NAME);
+            StanzaFilter filter = new AndFilter(new PacketIDFilter(reg.getPacketID()), new PacketTypeFilter(IQ.class));
+            PacketCollector collector = getConnection().createPacketCollector(filter);
+            getConnection().sendPacket(reg);
+            IQ result = (IQ) collector.nextResult(SmackConfiguration.getDefaultPacketReplyTimeout());
+            Log.e(TAG, "----result----" + result);
+            collector.cancel();// 停止请求results（是否成功的结果）
+            if (result == null) {
+                Log.e(TAG, "No response from server.");
+                Log.e(TAG, "conn 服务器没有返回结果");
+                return 0;
+            } else if (result.getType() == IQ.Type.result) {
+                Log.e(TAG, "conn 用户注册成功");
+                return 1;
+            } else { // if (result.getType() == IQ.Type.ERROR)
+                if (result.getError().toString().equalsIgnoreCase("conflict(409)")) {
+                    Log.e(TAG, "IQ.Type.ERROR: " + result.getError().toString());
+                    Log.e(TAG, "conn 账号已经存在");
+                    return 2;
+                } else {
+                    Log.e(TAG, "IQ.Type.ERROR: " + result.getError().toString());
+                    Log.e(TAG, "conn 注册失败");
+                    return 3;
+                }
+            }
+        } catch (SmackException.NotConnectedException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    /**
+     * 设置信息的监听
+     */
+    public void setMessageListener(final MessageCallback callback) {
+        chatManager = ChatManager.getInstanceFor(getConnection());
+        chatManager.addChatListener(new ChatManagerListener() {
+            @Override
+            public void chatCreated(Chat chat, boolean b) {
+                if (!b)
+                    chat.addMessageListener(new ChatMessageListener() {
+                        @Override
+                        public void processMessage(Chat chat, Message message) {
+                            callback.dealMessage(chat, message);
+                        }
+                    });
+            }
+        });
+    }
+
+    /**
+     * 发送消息
+     *
+     * @param touserid //10508
+     * @param content //发送内容
+     */
+    public void sendMessage(String touserid, String content) {
+        try {
+            chatManager = ChatManager.getInstanceFor(getConnection());
+            Chat chat = chatManager.createChat(touserid + "@" + XmppUtil.SERVER_NAME);
+            chat.getThreadID();
+            chat.sendMessage(content);
+        } catch (SmackException.NotConnectedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 发送消息
+     *
+     * @param touserid //10508
+     * @param msg     //发送内容
+     */
+    public void sendMessage(String touserid, Message msg) {
+        try {
+            Chat chat = chatManager.createChat(touserid + "@" + XmppUtil.SERVER_NAME);
+            chat.getThreadID();
+            chat.sendMessage(msg);
+        } catch (SmackException.NotConnectedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 删除当前用户
+     *
+     * @return
+     */
+    public boolean deleteAccount() {
+        if (getConnection() == null)
+            return false;
+        try {
+            AccountManager.getInstance(getConnection()).deleteAccount();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean changePassword(String pwd) {
+        if (getConnection() == null)
+            return false;
+        try {
+            AccountManager.getInstance(getConnection()).changePassword(pwd);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+
+}

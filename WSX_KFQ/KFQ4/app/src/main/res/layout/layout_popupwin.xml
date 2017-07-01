@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/popupwin_bg_border"
+    android:clickable="true"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:paddingBottom="90dp">
+
+    <ImageButton
+        android:id="@+id/popupwin_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:clickable="true"
+        android:src="@drawable/home_close" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="区域"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/spinner_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/spinner_bg"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="不限"
+            android:textColor="@color/divider_font_mid" />
+    </LinearLayout>
+
+    <!-- ************************* -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="总价"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/spinner_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/spinner_bg"
+            android:gravity="center"
+            android:text="不限"
+            android:textColor="@color/divider_font_mid" />
+    </LinearLayout>
+
+    <!-- ************************* -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="户型"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/spinner_huxing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/spinner_bg"
+            android:gravity="center"
+            android:text="不限"
+            android:textColor="@color/divider_font_mid" />
+    </LinearLayout>
+
+    <!-- ************************* -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="配套"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/spinner_peitao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/spinner_bg"
+            android:gravity="center"
+            android:text="不限"
+            android:textColor="@color/divider_font_mid" />
+    </LinearLayout>
+
+    <!-- ************************* -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="楼盘"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/edittext_house"
+            android:layout_width="wrap_content"
+            android:layout_height="41dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_select_bg"
+            android:hint="请输入楼盘名称(可选)"
+            android:paddingLeft="10dp"
+            android:textColor="@color/divider_font_mid"
+            android:textColorHint="@color/divider_font_tint" />
+    </LinearLayout>
+
+
+</LinearLayout>

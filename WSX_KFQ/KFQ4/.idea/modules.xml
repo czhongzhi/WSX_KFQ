@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/KFQ4.iml" filepath="$PROJECT_DIR$/KFQ4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library_p2refresh/library_p2refresh.iml" filepath="$PROJECT_DIR$/library_p2refresh/library_p2refresh.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library_pinnedheader/library_pinnedheader.iml" filepath="$PROJECT_DIR$/library_pinnedheader/library_pinnedheader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library_slidmenu/library_slidmenu.iml" filepath="$PROJECT_DIR$/library_slidmenu/library_slidmenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library_smack4/library_smack4.iml" filepath="$PROJECT_DIR$/library_smack4/library_smack4.iml" />
+    </modules>
+  </component>
+</project>
+

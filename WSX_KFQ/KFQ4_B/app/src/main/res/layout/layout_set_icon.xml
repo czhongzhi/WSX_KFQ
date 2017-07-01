@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="70dp">
+
+    <TextView
+        android:id="@+id/set_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="24dp"
+        android:text="头像"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="18sp" />
+
+    <com.inetgoes.kfqbrokers.view.MyCircleImageView
+        android:id="@+id/set_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/set_more"
+        android:src="@drawable/home_picture" />
+
+    <ImageView
+        android:id="@+id/set_more"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/setting_more"
+        android:layout_marginRight="24dp"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/divider_font_tint" />
+
+</RelativeLayout>

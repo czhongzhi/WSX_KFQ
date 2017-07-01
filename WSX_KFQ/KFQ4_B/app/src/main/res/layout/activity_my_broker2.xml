@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/list_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#e0e0e0"
+        android:padding="5dp"
+        android:text="a"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="18dp"
+        android:visibility="gone"></TextView>
+
+    <ListView
+        android:id="@+id/listInfo"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/list_title"
+        android:layout_weight="1.0"
+        android:background="#fff"
+        android:cacheColorHint="#00000000"
+        android:focusable="true"
+        android:scrollbars="none"></ListView>
+
+    <!--<com.inetgoes.fangdd.addressbook.QuickLocationRightTool-->
+        <!--android:id="@+id/rightCharacterListView"-->
+        <!--android:layout_width="20dip"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:background="#08000000" />-->
+
+</RelativeLayout>
+

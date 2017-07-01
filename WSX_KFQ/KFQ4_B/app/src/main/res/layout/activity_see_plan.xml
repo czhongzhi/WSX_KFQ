@@ -1,0 +1,65 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/content_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:text="交易跟踪"
+                android:textColor="@color/divider_font"
+                android:textSize="@dimen/app_18sp" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@+id/text"
+                android:text="第一广场"
+                android:textColor="@color/divider_font_mid"
+                android:textSize="@dimen/app_18sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divider_font_tint" />
+
+        <com.inetgoes.kfqbrokers.view.MyListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:divider="#00000000"
+            android:dividerHeight="0dp"
+            android:listSelector="#00000000">
+
+        </com.inetgoes.kfqbrokers.view.MyListView>
+
+        <TextView
+            android:id="@+id/null_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="暂无进度!"
+            android:textColor="@color/divider_font_mid" />
+
+
+    </LinearLayout>
+</ScrollView>

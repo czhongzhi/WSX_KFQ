@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    >
+
+    <ImageView
+        android:id="@+id/trace_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:src="@drawable/order_gray" />
+
+    <TextView
+        android:id="@+id/trace_state"
+        android:layout_alignTop="@+id/trace_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/trace_img"
+        android:text="已电话跟进"
+        android:layout_marginTop="-3dp"
+        android:textSize="@dimen/app_normal_size"
+        android:textColor="@color/divider_font_mid" />
+
+    <TextView
+        android:id="@+id/trace_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/trace_state"
+        android:layout_marginTop="8dp"
+        android:text="2016-1-22  15:15:15"
+        android:layout_alignLeft="@+id/trace_state"
+        android:textColor="@color/divider_font_mid" />
+
+    <TextView
+        android:id="@+id/trace_line"
+        android:layout_width="0.5dp"
+        android:background="@color/divider_font_tint"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

@@ -1,0 +1,111 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.inetgoes.kfqbrokers.activity.MyAssetDetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="15dp">
+
+        <LinearLayout
+            android:id="@+id/asset_detail_click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/asset_detail_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2016年"
+                android:textColor="@color/divider_font_mid"
+                android:textSize="@dimen/app_18sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:alpha="0.5"
+                android:paddingBottom="6dp"
+                android:src="@drawable/join_more" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider_font_tint" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/content_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="日期"
+            android:layout_weight="1"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="@dimen/app_18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="姓名"
+            android:layout_weight="1"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="@dimen/app_18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="楼盘"
+            android:layout_weight="1"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="@dimen/app_18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="销售面积"
+            android:layout_weight="1"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="@dimen/app_18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="佣金"
+            android:layout_weight="1"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="@dimen/app_18sp" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider_font_tint" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:listSelector="#00000000"></ListView>
+
+</LinearLayout>

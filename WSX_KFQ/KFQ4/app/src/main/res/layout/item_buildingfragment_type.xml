@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/brokers_gps"
+    android:layout_weight="1">
+
+    <ImageView
+        android:id="@+id/ItemImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:paddingBottom="12dp"
+        android:paddingLeft="22dp"
+        android:paddingRight="22dp"
+        android:paddingTop="12dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/per_eat">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/ItemText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ItemImage"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="12dp"
+        android:text="餐饮"
+        android:textColor="@color/divider_font"
+        android:textSize="14sp">
+
+    </TextView>
+</RelativeLayout> 

@@ -1,0 +1,217 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:scrollbars="none"
+    android:layout_height="match_parent"
+    android:background="@color/content_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.inetgoes.kfqbrokers.activity.MyAssetHistoryActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <LinearLayout
+                android:id="@+id/asset_detail_click"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/asset_detail_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2016年"
+                    android:textColor="@color/divider_font_mid"
+                    android:textSize="@dimen/app_18sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:alpha="0.5"
+                    android:paddingBottom="6dp"
+                    android:src="@drawable/join_more" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:paddingTop="5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/asset_curr_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="360000"
+                    android:textColor="@color/divider_font_mid"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="当年收入(元)"
+                    android:textColor="@color/divider_font_mid" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:gravity="right"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/asset_aver_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3000"
+                    android:textColor="@color/divider_font_mid"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="平均月收入(元)"
+                    android:textColor="@color/divider_font_mid" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+        <!-- 成交量 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divider_font_tint" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="成交量"
+                android:textColor="@color/divider_font_mid" />
+
+            <TextView
+                android:id="@+id/asset_total_succ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="总58套"
+                android:textColor="@color/divider_font_mid" />
+
+        </RelativeLayout>
+
+        <com.inetgoes.kfqbrokers.view.LineChart01View
+            android:id="@+id/lineChart_succ"
+            android:layout_width="match_parent"
+            android:layout_height="144dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="8dp" />
+
+
+        <!-- 到访量 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divider_font_tint" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="到访量"
+                android:textColor="@color/divider_font_mid" />
+
+            <TextView
+                android:id="@+id/asset_total_visit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="总580人"
+                android:textColor="@color/divider_font_mid" />
+
+        </RelativeLayout>
+
+        <com.inetgoes.kfqbrokers.view.LineChart01View
+            android:id="@+id/lineChart_visit"
+            android:layout_width="match_parent"
+            android:layout_height="144dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="8dp" />
+
+        <!-- 预约量 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divider_font_tint" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="预约量"
+                android:textColor="@color/divider_font_mid" />
+
+            <TextView
+                android:id="@+id/asset_total_yuyue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="总5800人"
+                android:textColor="@color/divider_font_mid" />
+
+        </RelativeLayout>
+
+        <com.inetgoes.kfqbrokers.view.LineChart01View
+            android:id="@+id/lineChart_yuyue"
+            android:layout_width="match_parent"
+            android:layout_height="144dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="8dp" />
+
+    </LinearLayout>
+</ScrollView>

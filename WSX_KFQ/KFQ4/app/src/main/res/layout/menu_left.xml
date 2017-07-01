@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/menu_left"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_leftmenu_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/item_userinfo"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:clickable="true"
+        android:gravity="center_vertical">
+
+        <FrameLayout
+            android:id="@+id/user_icon_fr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:alpha="0.3"
+                android:src="@drawable/user_icon_circle" />
+
+            <com.inetgoes.fangdd.view.MyCircleImageView
+                android:id="@+id/user_icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:src="@drawable/home_picture" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@id/user_icon_fr"
+            android:ellipsize="middle"
+            android:maxWidth="90dp"
+            android:singleLine="true"
+            android:text="USER_12345678"
+            android:textColor="@color/leftmenu_font"
+            android:textSize="16sp" />
+
+        <!--<ImageView-->
+        <!--android:id="@+id/arrow"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_marginRight="20.0dip"-->
+        <!--android:src="@drawable/neighbourhood_icon_moredetails" />-->
+
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:alpha="0.3"
+        android:background="@color/divider_font_tint" />
+
+    <include
+        android:id="@+id/item_xiaoxi"
+        layout="@layout/userinfo_menu_comb" />
+
+
+    <include
+        android:id="@+id/item_yuyue"
+        layout="@layout/userinfo_menu_comb" />
+
+    <include
+        android:id="@+id/item_jingjiren"
+        layout="@layout/userinfo_menu_comb" />
+
+
+    <include
+        android:id="@+id/item_kanfangdingdan"
+        layout="@layout/userinfo_menu_comb" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:alpha="0.3"
+        android:background="@color/divider_font_tint" />
+
+    <include
+        android:id="@+id/item_eval"
+        layout="@layout/userinfo_menu_comb" />
+
+    <include
+        android:id="@+id/item_jingjirenzhaomu"
+        layout="@layout/userinfo_menu_comb" />
+
+
+    <include
+        android:id="@+id/item_yezhu"
+        layout="@layout/userinfo_menu_comb" />
+
+    <include
+        android:id="@+id/item_tongzhi"
+        layout="@layout/userinfo_menu_comb" />
+
+    <include
+        android:id="@+id/item_shezhi"
+        layout="@layout/userinfo_menu_comb" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:alpha="0.3"
+        android:background="@color/divider_font_tint" />
+
+
+    <include
+        android:id="@+id/item_adout"
+        layout="@layout/userinfo_menu_comb" />
+
+</LinearLayout>

@@ -1,0 +1,21 @@
+package com.inetgoes.kfqbrokers.activity;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+import com.inetgoes.kfqbrokers.R;
+import com.inetgoes.kfqbrokers.view.CustomTitleBar;
+
+/**
+ * 注册成功界面
+ */
+public class RegistSuccessActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        CustomTitleBar.getTitleBar(this, "经纪人加盟", true, false);
+        setContentView(R.layout.activity_regist_success);
+    }
+
+}

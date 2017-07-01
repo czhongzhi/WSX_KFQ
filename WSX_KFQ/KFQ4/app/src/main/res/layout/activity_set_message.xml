@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:slideswitch="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/content_bg"
+    android:orientation="vertical"
+    tools:context="com.inetgoes.fangdd.activity.SetMessageActivity">
+
+    <include
+        android:id="@+id/set_mess"
+        layout="@layout/layout_set_switch" />
+
+    <include
+        android:id="@+id/set_ring"
+        layout="@layout/layout_set_switch" />
+
+    <include
+        android:id="@+id/set_shake"
+        layout="@layout/layout_set_switch" />
+
+</LinearLayout>

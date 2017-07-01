@@ -1,0 +1,444 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/content_bg"
+    android:scrollbars="none"
+    tools:context="com.inetgoes.kfqbrokers.activity.UploadHouseSourceTwoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="10dp"
+                android:text="基本参数"
+                android:textColor="@color/divider_font"
+                android:textSize="18sp"
+                />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:text="开盘时间"
+                    android:textColor="@color/divider_font"
+                    android:textSize="18sp"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3">
+
+
+                    <TextView
+                        android:id="@+id/tv_kaipan_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="41dp"
+                        android:background="@drawable/broker_item_info"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:text="请选择"
+                        android:textColor="@color/divider_font_tint"
+                        android:textSize="18dp"/>
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/join_more"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+
+                    android:text="交房时间"
+                    android:textColor="@color/divider_font"
+                    android:textSize="18sp"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3">
+
+                    <TextView
+                        android:id="@+id/tv_jiaofang_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="41dp"
+                        android:background="@drawable/broker_item_info"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:text="请选择"
+                        android:textColor="@color/divider_font_tint"
+                        android:textSize="18dp"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/join_more"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+
+                    android:text="产权年限"
+                    android:textColor="@color/divider_font"
+                    android:textSize="18sp"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3">
+
+                    <TextView
+                        android:id="@+id/tv_chanquan_year"
+                        android:layout_width="match_parent"
+                        android:layout_height="41dp"
+                        android:background="@drawable/broker_item_info"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:text="请选择"
+                        android:textColor="@color/divider_font_tint"
+                        android:textSize="18dp"/>
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/join_more"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:text="建筑类型"
+                    android:textColor="@color/divider_font"
+                    android:textSize="18sp"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3">
+
+                    <TextView
+                        android:id="@+id/tv_housetype"
+                        android:layout_width="match_parent"
+                        android:layout_height="41dp"
+                        android:background="@drawable/broker_item_info"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:text="请选择"
+                        android:textColor="@color/divider_font_tint"
+                        android:textSize="18dp"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/join_more"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:text="装修状况"
+                    android:textColor="@color/divider_font"
+                    android:textSize="18sp"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3">
+
+                    <TextView
+                        android:id="@+id/tv_zhuangxiu_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="41dp"
+                        android:background="@drawable/broker_item_info"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:text="请选择"
+                        android:textColor="@color/divider_font_tint"
+                        android:textSize="18dp"/>
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/join_more"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/ed_developers"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_select_bg"
+                android:hint="开发商"
+                android:paddingLeft="10dp"
+                android:textColorHint="@color/divider_font_tint"/>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+
+                <EditText
+                    android:id="@+id/ed_building_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="41dp"
+                    android:background="@drawable/edittext_select_bg"
+                    android:hint="建筑面积"
+                    android:paddingLeft="10dp"
+                    android:textColorHint="@color/divider_font_tint"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="12dp"
+                    android:text="㎡"
+                    android:textColor="@color/divider_font_tint"/>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+
+                <EditText
+                    android:id="@+id/ed_green_rate"
+                    android:layout_width="match_parent"
+                    android:layout_height="41dp"
+                    android:background="@drawable/edittext_select_bg"
+                    android:hint="绿化率"
+                    android:paddingLeft="10dp"
+                    android:textColorHint="@color/divider_font_tint"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="12dp"
+                    android:text="%"
+                    android:textColor="@color/divider_font_tint"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+
+                <EditText
+                    android:id="@+id/ed_volume_rate"
+                    android:layout_width="match_parent"
+                    android:layout_height="41dp"
+                    android:background="@drawable/edittext_select_bg"
+                    android:hint="容积率"
+                    android:paddingLeft="10dp"
+                    android:textColorHint="@color/divider_font_tint"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="12dp"
+                    android:text="%"
+                    android:textColor="@color/divider_font_tint"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+
+                <EditText
+                    android:id="@+id/ed_households"
+                    android:layout_width="match_parent"
+                    android:layout_height="41dp"
+                    android:background="@drawable/edittext_select_bg"
+                    android:hint="总户数"
+                    android:paddingLeft="10dp"
+                    android:textColorHint="@color/divider_font_tint"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="12dp"
+                    android:text="户"
+                    android:textColor="@color/divider_font_tint"/>
+
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/ed_property_com"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/edittext_select_bg"
+                android:hint="物业公司"
+                android:paddingLeft="10dp"
+                android:textColorHint="@color/divider_font_tint"/>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="12dp">
+
+                <EditText
+                    android:id="@+id/ed_property"
+                    android:layout_width="match_parent"
+                    android:layout_height="41dp"
+                    android:background="@drawable/edittext_select_bg"
+                    android:hint="物业费"
+                    android:paddingLeft="10dp"
+                    android:textColorHint="@color/divider_font_tint"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="12dp"
+                    android:text="元/㎡"
+                    android:textColor="@color/divider_font_tint"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingBottom="14dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="10dp">
+
+            <Button
+                android:id="@+id/housesou"
+                android:layout_width="1dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_select_bg"
+                android:text="预览"
+                android:textColor="@color/divider_font_mid"
+                android:textSize="18sp"/>
+
+            <Button
+                android:id="@+id/housesourc"
+                android:layout_width="1dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_select_bg"
+                android:text="提交"
+                android:textColor="@color/divider_font_mid"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>

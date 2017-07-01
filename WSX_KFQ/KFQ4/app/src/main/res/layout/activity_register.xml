@@ -1,0 +1,105 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/content_bg"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    tools:context="com.inetgoes.fangdd.activity.RegisterActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/register_intr"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="@dimen/app_14" />
+
+    <EditText
+        android:id="@+id/ed_phone"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/edittext_select_bg"
+        android:hint="请输入手机号码"
+        android:inputType="phone"
+        android:paddingLeft="10dp"
+        android:textColorHint="@color/divider_font_tint" />
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ed_phone"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/ed_autocode"
+            android:layout_width="wrap_content"
+            android:layout_height="41dp"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_select_bg"
+            android:hint="请输入验证码"
+            android:inputType="number"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/divider_font_tint" />
+
+        <Button
+            android:id="@+id/but_getcode"
+            android:layout_width="78dp"
+            android:layout_height="41dp"
+            android:layout_alignEnd="@+id/textView"
+            android:layout_alignRight="@+id/textView"
+            android:layout_alignTop="@+id/ed_autocode"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/button_select_bg"
+            android:text="验证"
+            android:textColor="@color/divider_font" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/but_register"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_below="@+id/layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_select_bg"
+        android:text="开始"
+        android:textColor="@color/divider_font" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/but_register"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击-开始，即表示您同意"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="@dimen/app_14"  />
+
+        <TextView
+            android:id="@+id/app_protocol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:text="看房去服务协议"
+            android:textColor="@color/divider_font"
+            android:textSize="@dimen/app_14"  />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/titlebar_height"
+    android:id="@+id/main_bar"
+    android:background="@color/titlebar_color"
+    android:orientation="horizontal">
+
+    <ImageButton
+        android:id="@+id/leftmenu_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:background="@null"
+        android:layout_marginLeft="16dp"
+        android:src="@drawable/home_user" />
+
+    <TextView
+        android:id="@+id/area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="16dp"
+        android:textColor="@color/divider_font"
+        android:drawableRight="@drawable/home_more"
+        android:text="深圳 "
+        android:textSize="@dimen/app_normal_size" />
+
+
+    <ImageView
+        android:id="@+id/app_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/home_logo" />
+
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0.5dp"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:background="@color/divider" />-->
+
+
+</RelativeLayout>

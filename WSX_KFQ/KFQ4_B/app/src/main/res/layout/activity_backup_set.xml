@@ -1,0 +1,200 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/content_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <!-- 姓名 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:text="姓名"
+            android:textColor="@color/divider_font_mid" />
+
+        <EditText
+            android:id="@+id/ed_name"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="10dp"
+            android:textColor="@color/divider_font_mid"
+            android:background="@drawable/edittext_divider_bg" />
+
+        <!-- 手机号码 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:text="手机号码"
+            android:textColor="@color/divider_font_mid" />
+
+        <EditText
+            android:id="@+id/ed_phone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="10dp"
+            android:textColor="@color/divider_font_mid"
+            android:background="@drawable/edittext_divider_bg"
+            android:inputType="phone" />
+
+        <!-- 性别 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:text="性别"
+            android:textColor="@color/divider_font_mid" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/edittext_divider_bg">
+
+            <RadioGroup
+                android:id="@+id/rg_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rg_man"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:button="@drawable/radiobutton_style"
+                    android:text="  男"
+                    android:textColor="@color/divider_font_mid" />
+
+                <RadioButton
+                    android:id="@+id/rg_woman"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="30dp"
+                    android:button="@drawable/radiobutton_style"
+                    android:text="  女"
+                    android:textColor="@color/divider_font_mid" />
+
+            </RadioGroup>
+
+        </RelativeLayout>
+
+        <!-- 意向区域 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:text="意向区域"
+            android:textColor="@color/divider_font_mid" />
+
+        <EditText
+            android:id="@+id/ed_intent_area"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="10dp"
+            android:textColor="@color/divider_font_mid"
+            android:background="@drawable/edittext_divider_bg" />
+
+        <!-- 意向房源 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:text="意向房源"
+            android:textColor="@color/divider_font_mid" />
+
+        <EditText
+            android:id="@+id/ed_intent_house"
+            android:layout_width="match_parent"
+            android:paddingLeft="10dp"
+            android:textColor="@color/divider_font_mid"
+            android:layout_height="40dp"
+            android:background="@drawable/edittext_divider_bg" />
+
+        <!-- 意向户型 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:text="意向户型"
+            android:textColor="@color/divider_font_mid" />
+
+        <EditText
+            android:id="@+id/ed_intent_huxing"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="10dp"
+            android:textColor="@color/divider_font_mid"
+            android:background="@drawable/edittext_divider_bg" />
+
+        <!-- 意向面积 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:text="意向面积"
+            android:textColor="@color/divider_font_mid" />
+
+        <EditText
+            android:id="@+id/ed_intent_prop"
+            android:layout_width="match_parent"
+            android:paddingLeft="10dp"
+            android:textColor="@color/divider_font_mid"
+            android:layout_height="40dp"
+            android:background="@drawable/edittext_divider_bg" />
+
+        <!-- 描述 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:text="描述"
+            android:textColor="@color/divider_font_mid" />
+
+        <EditText
+            android:id="@+id/ed_info_backup"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/divider_font_mid"
+            android:background="@drawable/edittext_divider_bg" />
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_divider_bg_select"
+            android:text="保存"
+            android:textColor="@color/divider_font_mid" />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,199 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/layout_titlebar_main" />
+
+            <include layout="@layout/layout_titlebar_waitdialog" />
+        </FrameLayout>
+
+
+        <RadioGroup
+            android:id="@+id/layout_tap"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/new_house"
+                android:layout_width="70dp"
+                android:layout_height="33dp"
+                android:background="@drawable/home_select"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:paddingBottom="3dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="3dp"
+                android:text="新房"
+                android:textColor="@color/divider_font"
+                android:textSize="@dimen/app_normal_size" />
+
+            <RadioButton
+                android:id="@+id/second_hand_house"
+                android:layout_width="70dp"
+                android:layout_height="33dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/home_select"
+                android:button="@null"
+                android:gravity="center"
+                android:paddingBottom="3dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="3dp"
+                android:text="二手房"
+                android:textColor="@color/divider_font"
+                android:textSize="@dimen/app_normal_size" />
+
+            <RadioButton
+                android:id="@+id/rent_house"
+                android:layout_width="70dp"
+                android:layout_height="33dp"
+                android:background="@drawable/home_select"
+                android:button="@null"
+                android:gravity="center"
+                android:paddingBottom="3dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="3dp"
+                android:text="出租房"
+                android:textColor="@color/divider_font"
+                android:textSize="@dimen/app_normal_size" />
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divider_font_tint" />
+
+
+        <LinearLayout
+            android:layout_width="94dp"
+            android:layout_height="94dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/main_round"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/home_people" />
+
+            <TextView
+                android:id="@+id/brokernum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="*"
+                android:textColor="@color/mate_color"
+                android:textSize="@dimen/app_main_num" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/brokernum_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:text="当前有**经纪人在线"
+            android:textColor="@color/divider_font"
+            android:textSize="@dimen/app_normal_size" />
+
+        <LinearLayout
+            android:layout_width="94dp"
+            android:layout_height="94dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/main_round"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/housenum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*"
+                android:textColor="@color/mate_color"
+                android:textSize="@dimen/app_main_num" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/housenum_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:text="共发布**个楼盘"
+            android:textColor="@color/divider_font"
+            android:textSize="@dimen/app_normal_size" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:src="@drawable/home_order_bg" />
+
+        <include
+            android:id="@+id/popupwin"
+            layout="@layout/layout_popupwin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/show_popup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="43dp"
+            android:background="@drawable/home_order"
+            android:gravity="center"
+            android:text="功能站位"
+            android:textColor="@color/mate_color" />
+
+        <FrameLayout
+            android:id="@+id/dialog_bgchange"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/titlebar_height"></FrameLayout>
+
+    </FrameLayout>
+</FrameLayout>
+

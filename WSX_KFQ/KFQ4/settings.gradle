@@ -1,0 +1,1 @@
+include ':app', ':library_slidmenu', ':library_p2refresh', ':library_smack4', ':library_pinnedheader'

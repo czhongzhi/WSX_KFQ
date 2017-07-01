@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:scrollbars="none"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:background="@color/mate_color"
+                android:gravity="center"
+                android:text="与您匹配的楼盘"
+                android:textColor="@color/divider_font"
+                android:textSize="16sp" />
+
+
+            <!--房源listView-->
+
+            <com.inetgoes.fangdd.view.MyListView
+                android:id="@+id/lv_fangyuan"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp" />
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:background="@color/content_bg">
+
+
+        <TextView
+            android:id="@+id/allbuidinglist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/main_round_2"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:textColor="@color/divider_font_mid"
+            android:paddingRight="5dp"
+            android:paddingTop="10dp"
+            android:text="TA的全部房源" />
+
+    </RelativeLayout>
+
+</FrameLayout>

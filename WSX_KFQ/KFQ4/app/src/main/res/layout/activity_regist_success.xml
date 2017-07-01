@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/content_bg"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/dialog_icon"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/ok" />
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="您已成功注册"
+        android:textColor="@color/divider_font"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="我们将尽快审核您的资料"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="6dp"
+        android:text="审核结果将以短信的形式通知您"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp" />
+
+    <ImageView
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="看房去房砖端"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/join_go"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/join_go"
+        android:text="前往下载 "
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/mate_color"
+        android:textSize="20sp" />
+
+
+</LinearLayout>

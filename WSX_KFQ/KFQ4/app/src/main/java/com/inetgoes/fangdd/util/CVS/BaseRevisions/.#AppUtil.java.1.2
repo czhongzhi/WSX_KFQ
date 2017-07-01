@@ -1,0 +1,78 @@
+package com.inetgoes.fangdd.util;
+
+import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.text.TextUtils;
+import android.util.TypedValue;
+import android.widget.Toast;
+
+import com.inetgoes.fangdd.manager.AppSharePrefManager;
+
+/**
+ * app相关的方法封装类
+ * Created by czz on 2015/10/28.
+ */
+public class AppUtil {
+
+    /**
+     * 是否是第一次使用应用或第一次使用更新的
+     * @return
+     */
+    public static boolean isFirstInApp(Context paramContext){
+        return !AppSharePrefManager.getInstance(paramContext).getVersionName().equals(AppUtil.getCurrentAppVersionName(paramContext));
+    }
+
+    /**
+     * 获取app的版本号 VersionCode
+     * @param paramContext
+     * @return
+     */
+    public static int getCurrentAppVersionCode(Context paramContext) {
+        return getCurrentAppPackageInfo(paramContext).versionCode;
+    }
+
+    /**
+     * 获取app的版本号名称 versionName
+     * @param paramContext
+     * @return
+     */
+    public static String getCurrentAppVersionName(Context paramContext) {
+        return getCurrentAppPackageInfo(paramContext).versionName;
+    }
+
+    private static PackageInfo getCurrentAppPackageInfo(Context paramContext) {
+        try {
+            PackageInfo localPackageInfo = paramContext.getPackageManager().getPackageInfo(paramContext.getPackageName(), 0);
+            return localPackageInfo;
+        } catch (PackageManager.NameNotFoundException localNameNotFoundException) {
+            localNameNotFoundException.printStackTrace();
+            throw new RuntimeException(localNameNotFoundException);
+        }
+    }
+
+    public static int dp2px(int dp,Context context) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp,
+                context.getResources().getDisplayMetrics());
+    }
+
+    public static int px2dip(Context context, float pxValue) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (pxValue / scale + 0.5f);
+    }
+
+    public static int dip2px(Context context, float dipValue) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dipValue * scale + 0.5f);
+    }
+
+    public static int px2sp(Context context, float pxValue) {
+        final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
+        return (int) (pxValue / fontScale + 0.5f);
+    }
+
+    public static int sp2px(Context context, float spValue) {
+        final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
+        return (int) (spValue * fontScale + 0.5f);
+    }
+}

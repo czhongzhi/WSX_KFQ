@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+    <TextView
+        android:id="@+id/asset_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2.33"
+        android:layout_weight="1"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="@dimen/app_normal_size" />
+
+    <TextView
+        android:id="@+id/asset_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="吉小及"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="@dimen/app_normal_size" />
+
+    <TextView
+        android:id="@+id/asset_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="第一世界"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="@dimen/app_normal_size" />
+
+    <TextView
+        android:id="@+id/asset_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="78㎡"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="@dimen/app_normal_size" />
+
+    <TextView
+        android:id="@+id/asset_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="68000.00"
+        android:gravity="center"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="@dimen/app_normal_size" />
+
+
+</LinearLayout>

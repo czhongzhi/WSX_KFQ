@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/popupwin_bg"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/dialog_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true" />
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:text="尊敬的客户"
+        android:textColor="@color/divider_font"
+        android:textSize="16sp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/dialog_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:gravity="left"
+        android:lineSpacingMultiplier="1.25"
+        android:text="房产专家会在3分钟之内与您取得联系请您耐心等待"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="14sp" />
+
+    <com.inetgoes.fangdd.view.FlowLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/bomb_people"
+            android:gravity="center_vertical"
+            android:text="你可以点击首页左上角头像"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="@dimen/app_14" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="，在“"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="@dimen/app_14" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="我"
+            android:textColor="@color/mate_color"
+            android:textSize="@dimen/app_14" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="的"
+            android:textColor="@color/mate_color"
+            android:textSize="@dimen/app_14" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="预"
+            android:textColor="@color/mate_color"
+            android:textSize="@dimen/app_14" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="约"
+            android:textColor="@color/mate_color"
+            android:textSize="@dimen/app_14" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="”，查看相关信息"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="@dimen/app_14" />
+
+    </com.inetgoes.fangdd.view.FlowLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/dialog_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:background="@drawable/button_divider_bg_select"
+            android:paddingBottom="8dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingTop="8dp"
+            android:text="好的"
+            android:textColor="@color/divider_font_mid" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

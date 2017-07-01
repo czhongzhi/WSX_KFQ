@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="280dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <include
+            android:id="@+id/buiding_eat"
+            layout="@layout/item_buildingfragment_type" />
+
+        <include
+            android:id="@+id/buiding_edu"
+            layout="@layout/item_buildingfragment_type" />
+
+        <include
+            android:id="@+id/buiding_play"
+            layout="@layout/item_buildingfragment_type" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp">
+
+        <include
+            android:id="@+id/buiding_shop"
+            layout="@layout/item_buildingfragment_type" />
+
+        <include
+            android:id="@+id/buiding_tra"
+            layout="@layout/item_buildingfragment_type" />
+
+        <include
+            android:id="@+id/buiding_hos"
+            layout="@layout/item_buildingfragment_type" />
+    </LinearLayout>
+
+</LinearLayout>

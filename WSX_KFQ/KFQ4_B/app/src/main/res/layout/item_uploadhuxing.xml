@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+
+    <FrameLayout
+        android:id="@+id/layout_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/upload_huxing_icon"
+                android:layout_width="105dp"
+                android:layout_height="80dp" />
+
+            <RelativeLayout
+                android:id="@+id/upload_huxing_select"
+                android:layout_width="105dp"
+                android:layout_height="80dp"
+                android:background="@drawable/upload_huxing"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/cam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/upload_cam" />
+
+                <TextView
+                    android:id="@+id/cam_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cam"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:text="上传户型图"
+                    android:textColor="@color/divider_font_mid" />
+
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/upload_huxing_del"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/upload_del" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/upload_huxing"
+        android:orientation="vertical"
+        android:padding="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/upload_huxing_shi"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="right|center_vertical"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="室"
+                android:textColor="@color/divider_font" />
+
+            <EditText
+                android:id="@+id/upload_huxing_ting"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="right|center_vertical"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="厅"
+                android:textColor="@color/divider_font" />
+
+            <EditText
+                android:id="@+id/upload_huxing_wei"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="right|center_vertical"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:text="卫"
+                android:textColor="@color/divider_font" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divider_font_tint" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/upload_huxing_mian"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="面积"
+                android:textColorHint="@color/divider_font_tint"
+                android:background="@color/white"
+                android:gravity="right|center_vertical"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="㎡"
+                android:textColor="@color/divider_font" />
+
+            <TextView
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="3dp"
+                android:background="@color/divider_font_tint" />
+
+            <EditText
+                android:id="@+id/upload_huxing_wang"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="right|center_vertical"
+                android:paddingLeft="3dp"
+                android:hint="价格"
+                android:textColorHint="@color/divider_font_tint"
+                android:paddingRight="3dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:text="万"
+                android:textColor="@color/divider_font" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

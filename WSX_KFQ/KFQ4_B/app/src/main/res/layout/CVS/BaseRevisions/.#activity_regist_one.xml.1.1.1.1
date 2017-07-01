@@ -1,0 +1,105 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/join_bj"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    tools:context="com.inetgoes.kfqbrokers.activity.RegistMainActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_protocol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击“立即加盟”即表示您同意"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/app_protocol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:text="@string/regist_protocol"
+            android:textColor="#fac72f"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/app_protocolend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:text="的全部内容"
+            android:textColor="@color/divider_font"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/but_register"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_above="@id/ll_protocol"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/button_select_bg"
+        android:text="立即加盟"
+        android:textColor="@color/divider_font" />
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/but_register"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/ed_autocode"
+            android:layout_width="wrap_content"
+            android:layout_height="41dp"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_select_bg"
+            android:hint="请输入验证码"
+            android:inputType="number"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/divider_font_tint" />
+
+        <Button
+            android:id="@+id/but_getcode"
+            android:layout_width="78dp"
+            android:layout_height="41dp"
+            android:layout_alignEnd="@id/textView"
+            android:layout_alignRight="@id/textView"
+            android:layout_alignTop="@id/ed_autocode"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/button_select_bg"
+            android:text="验证"
+            android:textColor="@color/divider_font" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/ed_phone"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_above="@id/layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/edittext_select_bg"
+        android:hint="请输入手机号码"
+        android:inputType="phone"
+        android:paddingLeft="10dp"
+        android:textColorHint="@color/divider_font_tint" />
+
+
+</RelativeLayout>

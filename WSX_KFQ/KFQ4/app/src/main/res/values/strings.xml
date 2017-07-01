@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">看房去</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_welcome">欢迎页（启动页）</string>
+    <string name="title_activity_guide">引导页</string>
+    <string name="title_activity_register">注册页</string>
+
+    <!-- 一键注册 -->
+    <string name="register_intr">为了方便您与房产专家联系请你填写手机号码</string>
+    <string name="title_activity_mate_broker">匹配经纪人（确认）</string>
+    <string name="title_activity_broker_main">房产专家</string>
+    <string name="title_activity_my_message_main">我的消息</string>
+    <string name="title_activity_my_yuyue">我的预约</string>
+    <string name="title_activity_messageing">消息聊天页</string>
+    <string name="title_activity_see_house_list">看房订单</string>
+
+    <!-- 新添加 -->
+    <string name="title_activity_building_main">楼房主页</string>
+    <string name="title_activity_building_dan">订单主页</string>
+    <string name="title_activity_building_list">楼房列表</string>
+    <string name="title_activity_broker_evaluation">房产专家评价</string>
+    <string name="title_activity_set_message">设置-消息设置</string>
+    <string name="title_activity_set_user_info">个人中心</string>
+    <string name="title_activity_set_app">设置</string>
+    <string name="title_activity_set_law">法律条款</string>
+    <string name="title_activity_set_user_info2">修改单一信息</string>
+    <string name="title_activity_matching_buiding_list">房源列表</string>
+    <string name="title_activity_set_contact_we">联系我们</string>
+    <string name="contact_we_gongsi">深圳市点房科技有限公司</string>
+    <string name="contact_we_phone">电话：400-088-7580</string>
+    <string name="contact_we_email">kanfangqu@inetgoes.com</string>
+    <string name="contact_we_addr">地址：深圳市宝安区翠岭华庭鼎曦大厦</string>
+    <string name="title_activity_notify">通知</string>
+    <string name="regist_protocol"><u>法律声明和隐私政策</u></string>
+    <string name="title_activity_regist">注册</string>
+    <string name="title_activity_regist_two">注册第二页</string>
+    <string name="title_activity_registsuccess">注册成功</string>
+    <string name="title_activity_my_broker">我的房产专家</string>
+    <string name="call_hint">将于30秒内联系您，请保持电话畅通</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_broker_complain">投诉专家</string>
+    <string name="title_activity_about_kfq">关于看房去</string>
+
+</resources>

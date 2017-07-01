@@ -1,0 +1,102 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/content_bg"
+    tools:context="com.inetgoes.kfqbrokers.activity.HouseSourceListPushActivity">
+
+    <RadioGroup
+        android:id="@+id/layout_tap"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/new_house"
+            android:layout_width="70dp"
+            android:layout_height="33dp"
+            android:background="@drawable/home_select"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:paddingBottom="3dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="3dp"
+            android:text="新房"
+            android:textColor="@color/divider_font"
+            android:textSize="@dimen/app_normal_size"/>
+
+        <RadioButton
+            android:id="@+id/second_hand_house"
+            android:layout_width="70dp"
+            android:layout_height="33dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/home_select"
+            android:button="@null"
+            android:gravity="center"
+            android:paddingBottom="3dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="3dp"
+            android:text="二手房"
+            android:textColor="@color/divider_font"
+            android:textSize="@dimen/app_normal_size"/>
+
+        <RadioButton
+            android:id="@+id/rent_house"
+            android:layout_width="70dp"
+            android:layout_height="33dp"
+            android:background="@drawable/home_select"
+            android:button="@null"
+            android:gravity="center"
+            android:paddingBottom="3dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="3dp"
+            android:text="出租房"
+            android:textColor="@color/divider_font"
+            android:textSize="@dimen/app_normal_size"/>
+
+    </RadioGroup>
+
+
+    <!--all房源listView-->
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/lv_myhousesource"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000"
+        android:cacheColorHint="#00000000"
+        android:dividerHeight="1dp"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:listSelector="@color/transparent"
+        android:scrollbars="none"
+        android:smoothScrollbar="true"
+        ptr:ptrAnimationStyle="flip"
+        ptr:ptrDrawable="@drawable/default_ptr_flip"
+        ptr:ptrHeaderBackground="@color/progress_backgroud"
+        ptr:ptrHeaderTextColor="@color/floor_item_text_black" />
+
+
+
+    <!--<FrameLayout-->
+        <!--android:id="@+id/fl_house_list"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"></FrameLayout>-->
+
+
+</LinearLayout>

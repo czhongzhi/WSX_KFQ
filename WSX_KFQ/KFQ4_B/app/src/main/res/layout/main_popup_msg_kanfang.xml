@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/msg_all"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/grab_bomb">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="58dp"
+                android:gravity="center"
+                android:text="吉小及 向您发起看房订单"
+                android:textColor="@color/divider_font"
+                android:textSize="24sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="109dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:id="@+id/call_user"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:src="@drawable/grab_call" />
+
+                <ImageView
+                    android:id="@+id/call_new"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:layout_marginLeft="80dp"
+                    android:src="@drawable/grab_new" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <include
+                layout="@layout/layout_main_msg_bottom_2"
+                android:layout_width="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="100dp"
+                android:layout_marginRight="10dp"/>
+
+
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/popup_close"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="right"
+            android:adjustViewBounds="true"
+            android:src="@drawable/home_close" />
+
+    </FrameLayout>
+
+</LinearLayout>

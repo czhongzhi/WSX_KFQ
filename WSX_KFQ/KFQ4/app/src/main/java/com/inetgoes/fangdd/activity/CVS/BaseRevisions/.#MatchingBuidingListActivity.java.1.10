@@ -1,0 +1,244 @@
+package com.inetgoes.fangdd.activity;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.fasterxml.jackson.databind.JavaType;
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.inetgoes.fangdd.Constants;
+import com.inetgoes.fangdd.FangApplication;
+import com.inetgoes.fangdd.R;
+import com.inetgoes.fangdd.asynctast.HttpAsy;
+import com.inetgoes.fangdd.asynctast.PostExecute;
+import com.inetgoes.fangdd.manager.AppSharePrefManager;
+import com.inetgoes.fangdd.model.HouseInfo_BrokerIntroduce;
+import com.inetgoes.fangdd.util.JacksonMapper;
+import com.inetgoes.fangdd.view.CustomTitleBar;
+import com.nostra13.universalimageloader.core.ImageLoader;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/** 匹配房源列表主页
+ * Created by android on 2015/11/19.
+ */
+public class MatchingBuidingListActivity extends Activity {
+    private final static String matchingBuidingUrl = Constants.bHuouseMoreUrl;
+
+    private PullToRefreshListView lv_MatchingBuiding;//房源的LV
+
+    private MatchingBuidingListAdapter matchingBuidingListAdapter;
+
+    private int pagenum = 10;//一次加载几个条目
+
+    private int startIndex = 0;
+
+    private int brokerid;//经纪人id
+    private String tranid;
+
+    private List<HouseInfo_BrokerIntroduce> houses = new ArrayList<>();
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        CustomTitleBar.getTitleBar(this, "房源列表", true, false);
+        setContentView(R.layout.activity_matchingbuidinglist);
+
+
+        brokerid = getIntent().getIntExtra(BrokerMainActivity.BROKER_ID, 0);
+        tranid = getIntent().getStringExtra(Constants.TRANID);
+
+        initView();
+
+        requestData(startIndex, pagenum, false);
+
+
+    }
+
+
+    private void initView() {
+
+        //跳转到该经纪人的全部房源
+        findViewById(R.id.allbuidinglist).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MatchingBuidingListActivity.this, BuildingListActivity.class);
+                i.putExtra(BrokerMainActivity.BROKER_ID, brokerid);
+                i.putExtra(Constants.TRANID,tranid);
+                startActivity(i);
+            }
+        });
+
+        //带下拉刷新的ListView
+        lv_MatchingBuiding = (PullToRefreshListView) findViewById(R.id.lv_matchingbuiding);
+
+        matchingBuidingListAdapter = new MatchingBuidingListAdapter();
+        lv_MatchingBuiding.setAdapter(matchingBuidingListAdapter);
+
+        //设置刷新方式 : 下拉刷新
+        lv_MatchingBuiding.setMode(PullToRefreshBase.Mode.PULL_FROM_END);
+        //设置下拉刷新时的监听
+        lv_MatchingBuiding.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {
+            @Override
+            public void onRefresh(PullToRefreshBase<ListView> refreshView) {
+                startIndex += pagenum;
+                requestData(startIndex, pagenum, true);
+            }
+        });
+
+        lv_MatchingBuiding.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MatchingBuidingListActivity.this, BuildingMainActivity.class);
+                intent.putExtra(BuildingMainActivity.NEWCODE,houses.get(position-1).getNewcode());
+                intent.putExtra(BuildingMainActivity.TITLEBAR,houses.get(position-1).getLoupanname());
+                intent.putExtra(BrokerMainActivity.BROKER_ID,brokerid);
+                intent.putExtra(Constants.TRANID,tranid);
+                startActivity(intent);
+            }
+        });
+
+    }
+
+    /**
+     * 网络获取数据
+     * @param startIndex 从第几条开始获取
+     * @param pagenum 获取多少条数据
+     * @param isColse 是否在刷新
+     */
+    private void requestData(int startIndex, int pagenum, final boolean isColse) {
+        AppSharePrefManager sManager = AppSharePrefManager.getInstance(this);
+        Map<String, Object> map = new HashMap<>();
+        map.put("userid", sManager.getLastest_login_id());
+        map.put("tranid",tranid);
+
+//        map.put("reqtype", sManager.getMatePara_reqtype());
+//        map.put("city", sManager.getMatePara_city());
+//        map.put("area", sManager.getMatePara_area());
+//        map.put("loupanname", sManager.getMatePara_loupan());
+//        map.put("huxing", sManager.getMatePara_huxing().equals("不限") ? null : sManager.getMatePara_huxing());
+//        map.put("peitao", sManager.getMatePara_peitao().equals("不限") ? null : sManager.getMatePara_peitao());
+//
+//        String[] prices = sManager.getMatePara_price().split("~");
+//        map.put("price_low", prices[0]);
+//        map.put("price_high", prices[1]);
+        //
+        map.put("startindex", startIndex);
+        map.put("pagenum", pagenum);
+        map.put("brokerid", brokerid);
+
+        new HttpAsy(new PostExecute() {
+            @Override
+            public void onPostExecute(String result) {
+                Log.e("czhongzhi", "result -- " + result);
+                if (!TextUtils.isEmpty(result)) {
+                    JavaType javaType = JacksonMapper.getCollectionType(ArrayList.class, HouseInfo_BrokerIntroduce.class);
+                    List<HouseInfo_BrokerIntroduce> temps = null;
+                    try {
+                        temps = JacksonMapper.getObjectMapper().readValue(result, javaType);
+                        houses.addAll(temps);
+                        if (isColse) {
+                            lv_MatchingBuiding.onRefreshComplete();
+                        }
+                        matchingBuidingListAdapter.notifyDataSetChanged();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }).execute(matchingBuidingUrl, map);
+    }
+
+
+    private class MatchingBuidingListAdapter extends BaseAdapter {
+
+
+        @Override
+        public int getCount() {
+            return houses.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return houses.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+
+            ViewHolder viewHolder;
+            if (null == convertView) {
+                viewHolder = new ViewHolder();
+
+                convertView = View.inflate(MatchingBuidingListActivity.this, R.layout.item_broker_fangyuan, null);
+
+                viewHolder.fangyuan_image = (ImageView) convertView.findViewById(R.id.item_iv_fangyuan);
+                viewHolder.fangyuan_Name = (TextView) convertView
+                        .findViewById(R.id.item_tv_fangyuan1);
+                viewHolder.fangyuan_cishu = (TextView) convertView
+                        .findViewById(R.id.item_tv_fangyuan2);
+                viewHolder.fangyuan_SuccessNum = (TextView) convertView
+                        .findViewById(R.id.item_tv_fangyuan3);
+                viewHolder.fangyuan_prices = (TextView) convertView
+                        .findViewById(R.id.item_tv_fangyuan4);
+                viewHolder.fangyuan_position = (TextView) convertView
+                        .findViewById(R.id.item_tv_fangyuan5);
+
+                convertView.setTag(viewHolder);
+
+            } else {
+                viewHolder = (ViewHolder) convertView.getTag();
+
+            }
+            HouseInfo_BrokerIntroduce hbi = houses.get(position);
+
+            if (hbi != null) {
+
+                //加载图片
+                String imageurl = hbi.getLoupan_image_url();
+                if (!TextUtils.isEmpty(imageurl)) {
+                    ImageLoader.getInstance().displayImage(imageurl, viewHolder.fangyuan_image, FangApplication.options, FangApplication.animateFirstListener);
+                }
+                viewHolder.fangyuan_Name.setText(hbi.getLoupanname());
+                viewHolder.fangyuan_cishu.setText("看房次数：" + hbi.getKanfang_time().toString());
+                viewHolder.fangyuan_SuccessNum.setText("成交量：" + hbi.getTran_success_num().toString());
+                viewHolder.fangyuan_prices.setText(hbi.getPricedesc());
+                viewHolder.fangyuan_position.setText(hbi.getStrict());
+            }
+            return convertView;
+        }
+
+        /**
+         * 房源的holder
+         */
+        class ViewHolder {
+            ImageView fangyuan_image;
+            TextView fangyuan_Name;
+            TextView fangyuan_cishu;
+            TextView fangyuan_SuccessNum;
+            TextView fangyuan_prices;
+            TextView fangyuan_position;
+        }
+    }
+}

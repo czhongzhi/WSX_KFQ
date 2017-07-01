@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/mate_broker_bg"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.inetgoes.fangdd.view.SemicircleImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/matebroker_iv" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="-15dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/mate_broker_ro"
+                android:paddingBottom="3dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="10dp"
+                android:paddingTop="3dp"
+                android:text="发起预约"
+                android:textColor="@color/normal_font" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/broker_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="刘诗诗" />
+
+            <RatingBar
+                android:id="@+id/broker_score"
+                style="@style/kfqRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="20dp"
+                android:numStars="5"
+                android:rating="4.5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="3dp"
+                android:singleLine="true"
+                android:text="订单成交量:"
+                android:textColor="@color/divider_font" />
+
+            <TextView
+                android:id="@+id/transactions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="99笔"
+                android:textColor="#ff0000" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="35dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/broker_experience"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="从业经验十年"
+                android:textColor="@color/divider_font" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="3dp"
+                android:singleLine="true"
+                android:text="与您匹配的房源:"
+                android:textColor="@color/divider_font" />
+
+            <TextView
+                android:id="@+id/mate_house"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="22个"
+                android:textColor="#ff0000" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="35dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/broker_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="擅长区域：深圳.罗湖"
+                android:textColor="@color/divider_font" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="3dp"
+                android:singleLine="true"
+                android:text="正在运行的房源:"
+                android:textColor="@color/divider_font" />
+
+            <TextView
+                android:id="@+id/run_house"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="122个"
+                android:textColor="#ff0000" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="right|center_vertical"
+            android:orientation="horizontal"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/broker_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/mate_broker_icon_ok"
+                android:text=" 4.8"
+                android:textColor="@color/divider_font" />
+
+            <TextView
+                android:id="@+id/broker_comm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:drawableLeft="@drawable/mate_broker_icon_comm"
+                android:text=" 80"
+                android:textColor="@color/divider_font" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp">
+
+            <TextView
+                android:id="@+id/broker_eval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:text="楼盘评测"
+                android:textColor="@color/divider_font" />
+
+            <TextView
+                android:id="@+id/broker_house"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:padding="3dp"
+                android:text="他的房源"
+                android:textColor="@color/divider_font" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

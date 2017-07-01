@@ -1,0 +1,119 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="280dp"
+    android:paddingBottom="8dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="8dp">
+
+    <TextView
+        android:id="@+id/basic_open_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开盘时间:2015-12-20"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/basic_jiaofang_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/basic_open_time"
+        android:layout_marginTop="8dp"
+        android:text="交房时间:2015-12-20"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/basic_chanquan_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/basic_jiaofang_time"
+        android:layout_marginTop="8dp"
+        android:text="产权年限:70年"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/basic_developers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/basic_chanquan_time"
+        android:layout_marginTop="8dp"
+        android:text="开发商：恒大地产"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/basic_wuye"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/basic_developers"
+        android:layout_marginTop="8dp"
+        android:text="物业公司：恒大物业公司"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/basic_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/basic_wuye"
+        android:layout_marginTop="8dp"
+        android:text="建筑面积：8888.88㎡"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/basic_projtype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/basic_area"
+        android:layout_marginTop="8dp"
+        android:text="建筑类型：高层"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/basic_projfitment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/basic_projtype"
+        android:layout_marginTop="8dp"
+        android:text="装修情况：精装"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/basic_green"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="绿化率：30%"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/basic_volume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/basic_green"
+        android:layout_marginTop="8dp"
+        android:text="容积率：5.2%"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/basic_homenum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/basic_volume"
+        android:layout_marginTop="8dp"
+        android:text="总户数：500户"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="14sp" />
+</RelativeLayout>
+
+

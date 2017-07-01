@@ -1,0 +1,44 @@
+package com.inetgoes.kfqbrokers.model;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by czz on 2015/11/26.
+ */
+public class KfqMessageResp_Broker implements Serializable{
+
+    private String touser_image;
+    private String touser_name;
+    private List<KfqMessage> messages = new ArrayList<KfqMessage>();
+
+    public KfqMessageResp_Broker() {
+
+    }
+
+    public String getTouser_name() {
+        return touser_name;
+    }
+
+    public void setTouser_name(String touser_name) {
+        this.touser_name = touser_name;
+    }
+
+    public String getTouser_image() {
+        return touser_image;
+    }
+
+    public void setTouser_image(String touser_image) {
+        this.touser_image = touser_image;
+    }
+
+    public List<KfqMessage> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<KfqMessage> messages) {
+        this.messages = messages;
+    }
+
+}

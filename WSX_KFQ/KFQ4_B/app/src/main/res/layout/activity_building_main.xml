@@ -1,0 +1,351 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.inetgoes.fangdd.activity.BrokerMainActivity">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/building_img"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/broker_horimage" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/building_pricedesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="---元/平"
+                    android:textColor="@color/divider_font_red"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/buiding_position"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/building_pricedesc"
+                    android:layout_marginTop="4dp"
+                    android:scrollbars="vertical"
+                    android:singleLine="false"
+                    android:text="***"
+                    android:textColor="@color/divider_font_mid"
+                    android:textSize="14sp" />
+
+                <RelativeLayout
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/main_round_2"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/broker_evaluation1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="14dp"
+                        android:text="---"
+                        android:textColor="@color/divider_font_mid" />
+
+                    <TextView
+                        android:id="@+id/broker_evaluation2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="楼盘评测"
+                        android:textColor="@color/divider_font_mid" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/divider_font_tint" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="看房次数"
+                        android:textColor="@color/divider_font_mid"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/building_seenumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="-"
+                        android:textColor="@color/divider_font"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divider_font_tint" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="楼盘成交"
+                        android:textColor="@color/divider_font_mid"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/building_chengjiao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="-"
+                        android:textColor="@color/divider_font"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divider_font_tint" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="合作经纪人"
+                        android:textColor="@color/divider_font_mid"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/buiding_brokersnum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="-"
+                        android:textColor="@color/divider_font"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="18dp"
+                android:background="@color/content_bg">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/divider_font_tint" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/divider_font_tint" />
+            </RelativeLayout>
+
+            <!--户型展示区-->
+            <RadioGroup
+                android:id="@+id/layout_tap"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/building_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:text="户型"
+                    android:textColor="@color/divider_font_mid"
+                    android:textSize="@dimen/app_normal_size" />
+
+                <RadioButton
+                    android:id="@+id/building_parameter1"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="基本参数"
+                    android:textColor="@color/divider_font_mid"
+                    android:textSize="@dimen/app_normal_size" />
+
+                <RadioButton
+                    android:id="@+id/building_parameter2"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="周边配套"
+                    android:textColor="@color/divider_font_mid"
+                    android:textSize="@dimen/app_normal_size" />
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/indicatorLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <View
+                    android:id="@+id/indicatorView"
+                    android:layout_width="0dp"
+                    android:layout_height="3dp"
+                    android:layout_weight="1.0"
+                    android:background="@color/mate_color" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/divider_font_tint" />
+
+
+            <!--房源参数等。。。-->
+            <FrameLayout
+                android:id="@+id/building_framelayout"
+                android:layout_width="fill_parent"
+                android:minHeight="280dp"
+                android:layout_height="wrap_content"></FrameLayout>
+
+
+            <!--房源listView-->
+            <!--<RelativeLayout-->
+                <!--android:layout_width="fill_parent"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:background="@color/content_bg">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="fill_parent"-->
+                    <!--android:layout_height="0.5dp"-->
+                    <!--android:background="@color/divider_font_tint" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/buiding_fangyuan"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:text="相关房源(-)"-->
+                    <!--android:textColor="@color/divider_font_mid"-->
+                    <!--android:textSize="14sp" />-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="fill_parent"-->
+                    <!--android:layout_height="0.5dp"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:background="@color/divider_font_tint" />-->
+            <!--</RelativeLayout>-->
+
+            <!--<com.inetgoes.kfqbrokers.view.MyListView-->
+                <!--android:id="@+id/lv_fangyuan"-->
+                <!--android:layout_width="fill_parent"-->
+                <!--android:layout_height="fill_parent">-->
+
+            <!--</com.inetgoes.kfqbrokers.view.MyListView>-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="fill_parent"-->
+                <!--android:layout_height="55dp" />-->
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!--<LinearLayout-->
+
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom"-->
+        <!--android:background="@color/white"-->
+        <!--android:paddingBottom="4dp"-->
+        <!--android:paddingLeft="16dp"-->
+        <!--android:paddingRight="16dp"-->
+        <!--android:paddingTop="4dp">-->
+
+        <!--<Button-->
+            <!--android:id="@+id/yuyuekanfang"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="41dp"-->
+            <!--android:background="@drawable/button_divider_bg_select"-->
+            <!--android:text="预约看房"-->
+            <!--android:textColor="@color/divider_font_mid"-->
+            <!--android:textSize="18sp" />-->
+
+    <!--</LinearLayout>-->
+
+
+</FrameLayout>
+
+
+
+
+
+
+

@@ -1,0 +1,310 @@
+package com.inetgoes.fangdd;
+
+import android.app.Application;
+import android.content.Context;
+import android.os.Handler;
+import android.util.Log;
+import android.widget.TextView;
+
+import com.inetgoes.fangdd.util.AnimateFirstDisplayListener;
+import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
+import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
+import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
+import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
+
+import cn.smssdk.SMSSDK;
+
+/**
+ * Created by czz on 2015/10/28.
+ */
+public class FangApplication extends Application {
+    public static Context context = null;
+    public static FangApplication application;
+
+//    private static ArrayList<Activity> activityList = new ArrayList<>();
+//
+//    private List<Activity> activities = new ArrayList<Activity>();
+//
+//    public void addActivity(Activity activity) {
+//        activities.add(activity);
+//    }
+
+    // 填写从短信SDK应用后台注册得到的APPKEY,使用的是 掌淘科技的免费短信验证服务
+    //每天10000个短信验证服务
+    //申请网站和帐号/密码 http://mob.com/login 帐号/密码 kanfangqu@qq.com   B端：key e3914efdb410 fcc819917ec499be8792f8ef1338c1f5
+    //
+    private static String APPKEY_SHARESDK_SMS = "e3914efdb410";
+    // 填写从短信SDK应用后台注册得到的APPSECRET
+    private static String APPSECRET_SHARESDK_SMS = "fcc819917ec499be8792f8ef1338c1f5";
+
+    // IWXAPI 是第三方app和微信通信的openapi接口
+    //public static final String WECHAT_APP_KEY = "wx204e0cde7dcc5c8f";  //这个是测试的,jimmy本人的
+
+    //wx05f1a67e6deb49dc, 这个是看房去官方申请的微信appkey
+    public static final String WECHAT_APP_KEY = "wx05f1a67e6deb49dc";
+
+    private static final int TIMELINE_SUPPORTED_VERSION = 0x21020001;
+
+    public static final DisplayImageOptions options = new DisplayImageOptions.Builder()
+            .showImageOnLoading(R.drawable.defaut_img)
+            .showImageForEmptyUri(R.drawable.defaut_img)
+            .showImageOnFail(R.drawable.defaut_img)
+            .cacheInMemory(true)
+            .cacheOnDisk(true)
+            .considerExifParams(true)
+            .displayer(new SimpleBitmapDisplayer())
+            .build();
+
+    public static final DisplayImageOptions options_R = new DisplayImageOptions.Builder()
+            .showImageOnLoading(R.drawable.defaut_img)
+            .showImageForEmptyUri(R.drawable.defaut_img)
+            .showImageOnFail(R.drawable.defaut_img)
+            .cacheInMemory(true)
+            .cacheOnDisk(true)
+            .considerExifParams(true)
+            .displayer(new RoundedBitmapDisplayer(5))
+            .build();
+
+    public static ImageLoadingListener animateFirstListener = new AnimateFirstDisplayListener();
+
+    public static void initImageLoader(Context context) {
+        // This configuration tuning is custom. You can tune every option, you may tune some of them,
+        // or you can create default configuration by
+        //  ImageLoaderConfiguration.createDefault(this);
+        // method.
+        ImageLoaderConfiguration.Builder config = new ImageLoaderConfiguration.Builder(context);
+        config.threadPriority(Thread.NORM_PRIORITY - 2);
+        config.denyCacheImageMultipleSizesInMemory();
+        config.diskCacheFileNameGenerator(new Md5FileNameGenerator());
+        config.diskCacheSize(50 * 1024 * 1024); // 50 MiB
+        config.tasksProcessingOrder(QueueProcessingType.LIFO);
+        config.writeDebugLogs(); // Remove for release app
+
+        // Initialize ImageLoader with configuration.
+        ImageLoader.getInstance().init(config.build());
+    }
+
+
+//    public static PushAgent mPushAgent;
+//    public static String device_token;//Umeng的设备的Device Token
+
+    public Handler handler = new Handler() {
+//        @Override
+//        public void handleMessage(Message msg) {
+//            super.handleMessage(msg);
+//            switch (msg.what) {
+//                case 10011:
+//                    openfireLogin();
+//                    break;
+//            }
+//        }
+    };
+
+    /**
+     * ************************ by czz 注释 on 2016-01-20***************************************
+     */
+//    public IUmengRegisterCallback mRegisterCallback = new IUmengRegisterCallback() {
+//        @Override
+//        public void onRegistered(final String s) {
+//            handler.post(new Runnable() {
+//                @Override
+//                public void run() {
+//                    //updateStatus();
+//                    Log.e("czhongzhi", "注册回调");
+//
+//                    //获取设备的Device Token
+//                    device_token = UmengRegistrar.getRegistrationId(getApplicationContext());
+//                    AppSharePrefManager.getInstance(getApplicationContext()).setDevicetoken(device_token);
+//
+//                    Log.e("czhongzhi", "device_token " + device_token);
+//
+//                }
+//            });
+//        }
+//    };
+//
+//    public IUmengUnregisterCallback mUnregisterCallback = new IUmengUnregisterCallback() {
+//        @Override
+//        public void onUnregistered(String s) {
+//            handler.post(new Runnable() {
+//                @Override
+//                public void run() {
+//                    //
+//                    Log.e("czhongzhi", "注销回调");
+//                }
+//            });
+//        }
+//    };
+
+    public static TextView mate_wait_text;
+    public static int time = 60;
+    public static int currTime = 0;
+    public static String tranid;
+    public static int brokerNum;
+
+/************************* by czz 注释 on 2016-01-20***************************************/
+//    public UmengMessageHandler umengMessageHandler = new UmengMessageHandler() {
+//        @Override
+//        public Notification getNotification(Context context, UMessage msg) {
+//            switch (msg.builder_id) {
+//                case 0:
+//                    return super.getNotification(context, msg);
+////                        NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
+////                        RemoteViews myNotificationView = new RemoteViews(context.getPackageName(), R.layout.notification_view);
+////                        myNotificationView.setTextViewText(R.id.notification_title, msg.title);
+////                        myNotificationView.setTextViewText(R.id.notification_text, msg.text);
+////                        myNotificationView.setImageViewBitmap(R.id.notification_large_icon, getLargeIcon(context, msg));
+////                        myNotificationView.setImageViewResource(R.id.notification_small_icon, getSmallIconId(context, msg));
+////                        builder.setContent(myNotificationView);
+////                        Notification mNotification = builder.build();
+////                        //由于Android v4包的bug，在2.3及以下系统，Builder创建出来的Notification，并没有设置RemoteView，故需要添加此代码
+////                        mNotification.contentView = myNotificationView;
+////                        return mNotification;
+//                default:
+////                        //默认为0，若填写的builder_id并不存在，也使用默认。
+////                        return super.getNotification(context, msg);
+//                    NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
+//                    RemoteViews myNotificationView = new RemoteViews(context.getPackageName(), R.layout.notification_view);
+//                    myNotificationView.setTextViewText(R.id.notification_title, msg.title);
+//                    myNotificationView.setTextViewText(R.id.notification_text, msg.text);
+////                        myNotificationView.setImageViewBitmap(R.id.notification_large_icon, getLargeIcon(context, msg));
+////                        myNotificationView.setImageViewResource(R.id.notification_small_icon, getSmallIconId(context, msg));
+//                    builder.setContent(myNotificationView);
+//                    Notification mNotification = builder.build();
+//                    //由于Android v4包的bug，在2.3及以下系统，Builder创建出来的Notification，并没有设置RemoteView，故需要添加此代码
+//                    mNotification.contentView = myNotificationView;
+//                    return mNotification;
+//            }
+//        }
+//
+//        @Override
+//        public void dealWithCustomMessage(Context context, final UMessage uMessage) {
+//            new Handler(getMainLooper()).post(new Runnable() {
+//                @Override
+//                public void run() {
+//
+//                    Log.e("czhongzhi", "自定义消息 -- " + uMessage.custom);
+//                    Log.e("czhongzhi", "自定义消息 -- " + uMessage.title);
+//                    Log.e("czhongzhi", "自定义消息 -- " + uMessage.text);
+//
+//                    if (FangApplication.mate_wait_text != null) {
+////                        Map<String, String> map = JacksonMapper.getInstance().mapFromJson(uMessage.custom);
+////                        try {
+////                            if (null != map.get("notifytype") && map.get("notifytype").equals("resultdan")) {
+////                                String oldtext = FangApplication.mate_wait_text.getText().toString().trim();
+////                                brokerNum = Integer.valueOf(JacksonMapper.getInstance().onlyTNode(uMessage.custom, "num"));
+////                                tranid = map.get("tranid");
+////
+////                                Log.e("czhongzhi", "map num -- " + brokerNum);
+////                                Log.e("czhongzhi", "map tranid -- " + tranid);
+////
+////                                String uptext = "<font size='18' color='#8f8f90'>" + oldtext + "<br></font><font size='14' color='#8f8f90'>有" +
+////                                        brokerNum + "人抢单</font>";
+////
+////                                if (brokerNum == 3) {
+////                                    FangApplication.time = 3;
+////                                    FangApplication.currTime = FangApplication.time;
+////                                    uptext = "<font size='18' color='#8f8f90'>已有" + brokerNum + "抢单，3秒后跳转<br></font>";
+////                                } else {
+////
+////                                }
+////                                Log.e("czhongzhi", "1 FangApplication.mate_wait_text is " + (FangApplication.mate_wait_text != null));
+////                                FangApplication.mate_wait_text.setText(Html.fromHtml(uptext));
+////                            }
+////                        } catch (Exception e) {
+////                            Log.e("czhongzhi", "2 FangApplication.mate_wait_text is " + (FangApplication.mate_wait_text != null));
+////                        }
+//                    }
+//
+////                    boolean isClickOrDisMissed = true;
+////                    if (isClickOrDisMissed) {
+////
+////
+////                    } else {
+////
+////                    }
+//                }
+//            });
+//        }
+//    };
+
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        application = FangApplication.this;
+        context = getApplicationContext();
+//        if (AppSharePrefManager.getInstance(context).isLogined()) {
+//            handler.sendEmptyMessage(10011);
+//        }
+
+        SMSSDK.initSDK(getApplicationContext(), APPKEY_SHARESDK_SMS, APPSECRET_SHARESDK_SMS);
+
+        initImageLoader(getApplicationContext());
+
+/*************************** by czz 注释 on 2016-01-20****************************************/
+//        //开启推送服务
+//        mPushAgent = PushAgent.getInstance(getApplicationContext());
+//
+//        mPushAgent.setMessageHandler(umengMessageHandler);
+//
+//        mPushAgent.setMergeNotificaiton(false);
+//
+//        /**
+//         * 该Handler是在BroadcastReceiver中被调用，故
+//         * 如果需启动Activity，需添加Intent.FLAG_ACTIVITY_NEW_TASK
+//         * */
+//        UmengNotificationClickHandler notificationClickHandler = new UmengNotificationClickHandler() {
+//            @Override
+//            public void dealWithCustomAction(Context context, UMessage msg) {
+//                Toast.makeText(context, msg.custom, Toast.LENGTH_LONG).show();
+//            }
+//
+//        };
+//        mPushAgent.setNotificationClickHandler(notificationClickHandler);
+//
+//        mPushAgent.enable(mRegisterCallback);
+    }
+
+    /**
+     * 当终止应用程序对象时调用，不保证一定被调用，当程序是被
+     * 内核终止以便为其他应用程序释放资源，那
+     * 么将不会提醒，并且不调用应用程序的对象的onTerminate方法而直接终止进程
+     */
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+//        for (Activity activity : activities) {
+//            activity.finish();
+//        }
+        //super.onTerminate();
+        Log.e("czhongzhi", "onTerminate");
+    }
+
+    /**
+     * 当后台程序已经终止资源还匮乏时会调用这个方法。好的应用程序一般会
+     * 在这个方法里面释放一些不必
+     * 要的资源来应付当后台程序已经终止，前台应用程序内存还不够时的情况。
+     */
+    @Override
+    public void onLowMemory() {
+        //super.onLowMemory();
+        System.gc();
+        Log.e("czhongzhi", "onLowMemory");
+    }
+
+//    public void openfireLogin() {
+//        String u = String.valueOf(AppSharePrefManager.getInstance(context).getLastest_login_id());
+//        new LoginOpenfire().execute(u);
+//    }
+
+    public static FangApplication getFangApplication() {
+        return application;
+    }
+
+}

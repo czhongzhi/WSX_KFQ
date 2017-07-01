@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/guide_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="您好,房产专家"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="16sp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="欢迎使用看房去"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="26sp"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/guide_ll"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:text=" 请向左滑动"
+        android:drawableLeft="@drawable/left"
+        android:textColor="@color/mate_color"
+        android:textSize="16sp"/>
+
+
+</RelativeLayout>

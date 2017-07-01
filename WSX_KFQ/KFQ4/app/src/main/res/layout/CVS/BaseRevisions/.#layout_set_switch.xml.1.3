@@ -1,0 +1,34 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:slideswitch="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="50dp">
+
+    <TextView
+        android:id="@+id/set_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:text="消息开关"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="18sp" />
+
+    <com.inetgoes.fangdd.view.SlideSwitch
+        android:id="@+id/set_switch"
+        android:layout_width="60dip"
+        android:layout_height="25dip"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="16dp"
+        slideswitch:isOpen="true"
+        slideswitch:shape="circle"
+        slideswitch:themeColor="@color/divider_font_tint" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/divider_font_tint" />
+
+</RelativeLayout>

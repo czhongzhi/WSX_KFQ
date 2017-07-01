@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/content_bg"
+              android:orientation="vertical"
+              tools:context="com.inetgoes.fangdd.activity.SetLawActivity">
+
+    <include
+        android:id="@+id/set_layout_law_1"
+        layout="@layout/layout_set_normal" />
+
+    <include
+        android:id="@+id/set_layout_law_2"
+        layout="@layout/layout_set_normal" />
+
+    <include
+        android:id="@+id/set_layout_law_3"
+        layout="@layout/layout_set_normal" />
+
+</LinearLayout>

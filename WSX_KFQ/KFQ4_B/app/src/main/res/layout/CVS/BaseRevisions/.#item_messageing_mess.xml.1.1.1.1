@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/talk_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="16dp"
+    android:paddingTop="10dp">
+
+    <TextView
+        android:id="@+id/talk_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="16:25:35"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="14sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+
+        <ImageView
+            android:id="@+id/talk_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/defaut_img" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/talk_icon"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/mess_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/messageing_mess_top"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:singleLine="true"
+                android:text="有兴趣可接受楼盘推荐"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7.5dp"
+                android:background="@drawable/messageing_mess_bottom"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:id="@+id/loupen_icon"
+                        android:layout_width="84dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/defaut_img" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="10dp">
+
+                        <TextView
+                            android:id="@+id/loupen_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="前海时代.CEO公馆"
+                            android:textColor="@color/divider_font"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/loupen_title"
+                            android:layout_marginTop="4dp"
+                            android:text="楼盘价格"
+                            android:textColor="@color/divider_font_mid" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/loupen_title"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_toRightOf="@id/text"
+                            android:text="88000/平"
+                            android:textColor="@color/divider_font_red" />
+
+                        <TextView
+                            android:id="@+id/text2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/text"
+                            android:layout_marginTop="4dp"
+                            android:text="成交量"
+                            android:textColor="@color/divider_font_mid" />
+
+                        <TextView
+                            android:id="@+id/loupen_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/text"
+                            android:layout_marginTop="4dp"
+                            android:layout_toRightOf="@id/text"
+                            android:text="58"
+                            android:textColor="@color/divider_font_mid" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/divider_font_tint" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/mess_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:padding="10dp"
+                        android:text="查看详情"
+                        android:textColor="@color/divider_font_red" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

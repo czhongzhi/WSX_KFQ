@@ -1,0 +1,212 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/home_order_bg" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_titlebar_main" />
+        <!--<include layout="@layout/layout_titlebar_waitdialog" />-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divider_font_tint" />
+
+        <LinearLayout
+            android:id="@+id/ll_main_messageing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_message_order_onlinetime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="12dp"
+                android:text="抢单0单     在线0小时"
+                android:textColor="@color/divider_font"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_message_eva_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:text="有0人预约   看房订单0单"
+                android:textColor="@color/divider_font"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/main_my_asset"
+                    android:layout_width="68dp"
+                    android:layout_height="68dp"
+                    android:background="@drawable/main_round"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_message_asset"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/mate_color"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="4dp"
+                        android:text="我的资产"
+                        android:textColor="@color/divider_font_mid"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/main_my_housesource"
+                    android:layout_width="68dp"
+                    android:layout_height="68dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/main_round"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+
+                    <TextView
+                        android:id="@+id/tv_message_brokerhousenum"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="*"
+                        android:textColor="@color/mate_color"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="4dp"
+                        android:text="我的房源"
+                        android:textColor="@color/divider_font_mid"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_upload_housesource"
+                    android:layout_width="68dp"
+                    android:layout_height="68dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/main_round"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/grab_add" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:text="添加客户"
+                        android:textColor="@color/mate_color"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/new_msg_list"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="15dp"
+                android:listSelector="@color/transparent" />
+
+            <!--<include-->
+            <!--android:id="@+id/layout_main_message1"-->
+            <!--layout="@layout/item_main_message" />-->
+
+            <!--<include-->
+            <!--android:id="@+id/layout_main_message2"-->
+            <!--layout="@layout/item_main_message" />-->
+
+            <!--<include-->
+            <!--android:id="@+id/layout_main_message3"-->
+            <!--layout="@layout/item_main_message" />-->
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/main_all_bgchage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/main_popup_bgchange"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent" />
+
+        <!--popuwindow显示区-->
+
+
+        <Button
+            android:id="@+id/main_show_popup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="36dp"
+            android:background="@drawable/home_order"
+            android:gravity="center"
+            android:text="开始接单"
+            android:textColor="@color/mate_color"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/main_bt_rest"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="65dp"
+            android:layout_marginRight="32dp"
+            android:background="@drawable/home_order"
+            android:gravity="center"
+            android:text="休息"
+            android:textColor="@color/mate_color"
+            android:visibility="invisible" />
+    </FrameLayout>
+
+</FrameLayout>
+

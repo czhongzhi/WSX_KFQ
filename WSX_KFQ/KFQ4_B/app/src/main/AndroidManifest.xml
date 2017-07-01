@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.inetgoes.kfqbrokers" >
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- smssdk权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:name=".FangApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/MyAppTheme" >
+        <service android:name=".service.PushService" >
+            <intent-filter>
+                <action android:name="com.inetgoes.kfqbrokers.server.PushService" />
+            </intent-filter>
+        </service>
+
+        <!-- smssdk -->
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity android:name=".activity.WelcomeActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/title_activity_main"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.GuideActivity"
+            android:label="@string/title_activity_guide"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.RegistMainActivity"
+            android:label="@string/title_activity_regist"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activity.RegistTwoActivity"
+            android:label="@string/title_activity_regist_two"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".activity.RegistSuccessActivity"
+            android:label="@string/title_activity_registsuccess"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.RePasswordActivity"
+            android:label="@string/title_activity_re_password"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".activity.RePasswordSuccessActivity"
+            android:label="@string/title_activity_re_password_success"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SetBrokerInfoMainActivity"
+            android:label="@string/title_activity_set_broker_info_main"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.UploadHouseSourceMainActivity"
+            android:label="@string/title_activity_upload_house_source_main"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.UploadHouseSourceTwoActivity"
+            android:label="@string/title_activity_upload_house_source_two"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".activity.UploadHouseSourceThreeActivity"
+            android:label="@string/title_activity_upload_house_source_three"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".activity.HouseSourcePreviewActivity"
+            android:label="@string/title_activity_house_source_preview"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.HouseSourceListActivity"
+            android:label="@string/title_activity_house_source_list" />
+        <activity
+            android:name=".activity.HouseSourceListPushActivity"
+            android:label="@string/title_activity_house_source_list" />
+        <activity
+            android:name=".activity.MyMessageActivity"
+            android:label="我的消息"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MessageingActivity"
+            android:label="会话"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activity.SetAppActivity"
+            android:label="@string/title_activity_set_app" />
+        <activity
+            android:name=".activity.SetLawActivity"
+            android:label="@string/title_activity_set_law" />
+        <activity
+            android:name=".activity.SetLaw2Activity"
+            android:label="@string/title_activity_set_law" />
+        <activity
+            android:name=".activity.SetMessageActivity"
+            android:label="@string/title_activity_set_message" />
+        <activity
+            android:name=".activity.SeeHouseListActivity"
+            android:label="看房订单"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SetContactWeActivity"
+            android:label="联系我们"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MyYuYueActivity"
+            android:label="@string/title_activity_my_yu_yue" />
+        <activity
+            android:name=".activity.NotifyActivity"
+            android:label="@string/title_activity_notify" />
+        <activity
+            android:name=".activity.BuildingMainActivity"
+            android:label="房源主页"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SelectHuxingActivity"
+            android:label="@string/title_activity_select_huxing"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.BackupActivity"
+            android:label="@string/title_activity_backup"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.BackupSetActivity"
+            android:label="@string/title_activity_backup_set"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".addressbook.QuickLocationMainActivity"
+            android:label="联系人列表"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.BrokerComplainActivity"
+            android:label="投诉"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AboutKfqActivity"
+            android:label="@string/title_activity_about_kfq"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SeePlanActivity"
+            android:label="@string/title_activity_see_plan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MyAssetActivity"
+            android:label="@string/title_activity_my_asset_main"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MyAssetDetailActivity"
+            android:label="@string/title_activity_my_asset_detail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MyAssetHistoryActivity"
+            android:label="@string/title_activity_my_asset_history"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AddClientActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_add_client" >
+        </activity>
+    </application>
+
+</manifest>

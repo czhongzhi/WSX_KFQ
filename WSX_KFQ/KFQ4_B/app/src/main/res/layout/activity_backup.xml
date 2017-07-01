@@ -1,0 +1,189 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/content_bg">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/divider_font_tint" />
+
+            <ImageView
+                android:id="@+id/client_icon"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/defaut_img" />
+
+            <TextView
+                android:id="@+id/client_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/client_icon"
+                android:layout_toRightOf="@id/client_icon"
+                android:text="昵称"
+                android:textColor="@color/divider_font_mid" />
+
+            <ImageView
+                android:id="@+id/client_sex"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_alignBottom="@id/client_name"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_toRightOf="@id/client_name"
+                android:src="@drawable/boy"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/client_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/client_name"
+                android:layout_marginTop="6dp"
+                android:layout_toRightOf="@id/client_icon"
+                android:text="***********"
+                android:textColor="@color/divider_font_mid" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="10dp"
+                android:background="@color/divider_font_tint" />
+
+        </RelativeLayout>
+
+        <!--  编辑客户资料    -->
+        <include
+            android:id="@+id/intent_edit"
+            layout="@layout/item_backup" />
+
+        <!--  意向区域    -->
+        <include
+            android:id="@+id/intent_area"
+            layout="@layout/item_backup" />
+
+        <!--  意向房源    -->
+        <include
+            android:id="@+id/intent_house"
+            layout="@layout/item_backup" />
+
+        <!--  意向户型    -->
+        <include
+            android:id="@+id/intent_huxing"
+            layout="@layout/item_backup" />
+
+        <!--  意向面积    -->
+        <include
+            android:id="@+id/intent_prop"
+            layout="@layout/item_backup" />
+
+        <!--  信息备注    -->
+        <RelativeLayout
+            android:id="@+id/layout_infobackup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/divider_font_tint" />
+
+            <TextView
+                android:id="@+id/info_backup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp"
+                android:textColor="@color/divider_font_mid" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/divider_font_tint" />
+
+        </RelativeLayout>
+
+        <!--  客户来源    -->
+        <include
+            android:id="@+id/intent_fromtype"
+            layout="@layout/item_backup" />
+
+        <LinearLayout
+            android:id="@+id/yituijianloupan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/divider_font_tint" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="已推荐的房源"
+                    android:textColor="@color/divider_font" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/divider_font_tint" />
+
+            </LinearLayout>
+
+            <!--<include-->
+            <!--layout="@layout/item_seehouse"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="16dp" />-->
+            <com.inetgoes.kfqbrokers.view.MyListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="#00000000"
+                android:layout_marginTop="16dp"
+                android:dividerHeight="10dp"
+                android:listSelector="#00000000">
+
+            </com.inetgoes.kfqbrokers.view.MyListView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

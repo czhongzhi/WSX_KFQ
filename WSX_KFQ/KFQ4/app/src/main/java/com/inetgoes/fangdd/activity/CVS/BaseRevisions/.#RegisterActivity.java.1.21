@@ -1,0 +1,381 @@
+package com.inetgoes.fangdd.activity;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.text.Html;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.Display;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LinearInterpolator;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.inetgoes.fangdd.Constants;
+import com.inetgoes.fangdd.FangApplication;
+import com.inetgoes.fangdd.IM_Util.XmppUtil;
+import com.inetgoes.fangdd.R;
+import com.inetgoes.fangdd.asynctast.HttpAsy;
+import com.inetgoes.fangdd.asynctast.PostExecute;
+import com.inetgoes.fangdd.manager.AppSharePrefManager;
+import com.inetgoes.fangdd.util.AppUtil;
+import com.inetgoes.fangdd.util.HttpUtil;
+import com.inetgoes.fangdd.util.JacksonMapper;
+import com.inetgoes.fangdd.util.UIHandler;
+import com.inetgoes.fangdd.view.CustomTitleBar;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import cn.smssdk.EventHandler;
+import cn.smssdk.SMSSDK;
+import cn.smssdk.UserInterruptException;
+
+/**
+ * 注册页
+ * Created by czz on 2015/10/28.
+ */
+public class RegisterActivity extends Activity implements View.OnClickListener {
+    private EditText ed_phone;
+    private EditText ed_code;
+    private Button but_getcode;
+    private Button but_register;
+    private AlertDialog dialog_login;
+
+    private String phString;
+    private String vcString;
+
+    private EventHandler eHandler;
+    private Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            int event = msg.arg1;
+            int result = msg.arg2;
+            Object data = msg.obj;
+
+            Log.e("czhongzhi", "event -- " + event + " result --" + result);
+
+            if (result == SMSSDK.RESULT_COMPLETE) {
+                //短信注册成功后，返回MainActivity,然后提示新好友
+                if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) { //提交验证码成功
+                    //Toast.makeText(getApplicationContext(), "提交验证码成功", Toast.LENGTH_SHORT).show();
+
+                    //调用方法提交用户注册信息 或 登录
+                    final Map<String, Object> map = new HashMap<>();
+                    map.put("phoneno", phString);
+                    map.put("devicetype", "android");
+                    map.put("devicetoken", "kanfangqv");
+                    //map.put("devicetoken", AppSharePrefManager.getInstance(RegisterActivity.this).getDevicetoken());
+                    new HttpAsy(new PostExecute() {
+                        @Override
+                        public void onPostExecute(String result) {
+                            Log.e("czhongzhi", "RegisterActivity is " + result);
+                            if (TextUtils.isEmpty(result)) {
+                                Toast.makeText(RegisterActivity.this, "网络获取异常", Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+                            Map<String, Object> resMap = JacksonMapper.getInstance().mapObjFromJson(result);
+                            String status = (String) resMap.get("status");
+                            String id = JacksonMapper.getInstance().onlyTNode(result, "userid");
+                            if (TextUtils.isEmpty(id)) {
+                                return;
+                            }
+                            //把用户id写入本地
+                            AppSharePrefManager.getInstance(RegisterActivity.this).setLastest_login_id(Integer.valueOf(id));
+                            //聊天账号注册
+                            new RegOpenfire().execute(id);
+                        }
+                    }).execute(Constants.registerUrl, map);
+
+                } else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE) {
+                    //Toast.makeText(getApplicationContext(), "验证码已经发送", Toast.LENGTH_SHORT).show();
+
+                    //开启dialog提示
+                    showDialogSendCode();
+
+                } else if (event == SMSSDK.EVENT_GET_SUPPORTED_COUNTRIES) {//返回支持发送验证码的国家列表
+                    Toast.makeText(RegisterActivity.this, "获取国家列表成功", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                //关闭dialog提示
+                if (dialog_login != null && dialog_login.isShowing())
+                    dialog_login.dismiss();
+
+                showDialogErroCode();
+
+                if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE && data != null && (data instanceof UserInterruptException)) {
+                    // 由于此处是开发者自己决定要中断发送的，因此什么都不用做
+                    return;
+                }
+
+                ((Throwable) data).printStackTrace();
+                Throwable throwable = (Throwable) data;
+                try {
+                    JSONObject object = new JSONObject(throwable.getMessage());
+                    String des = object.optString("detail");
+                    if (!TextUtils.isEmpty(des)) {
+                        Toast.makeText(RegisterActivity.this, des, Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                //Toast.makeText(RegisterActivity.this, "验证码错误", Toast.LENGTH_SHORT).show();
+            }
+        }
+    };
+
+    /**
+     * 开启验证码已发送dialog
+     */
+    private void showDialogSendCode() {
+        AlertDialog.Builder builder2 = new AlertDialog.Builder(this, R.style.Dialog);
+        final AlertDialog dialog = builder2.show();
+        View view = LayoutInflater.from(this).inflate(R.layout.register_dialog_send, null);
+        dialog.setContentView(view);
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (dialog != null && dialog.isShowing())
+                    dialog.dismiss();
+            }
+        }, 1500);
+    }
+
+    /**
+     * 开启正在登陆dialog
+     */
+    private void showDialogLogin() {
+        AlertDialog.Builder builder2 = new AlertDialog.Builder(this, R.style.Dialog);
+        dialog_login = builder2.show();
+        View view = LayoutInflater.from(this).inflate(R.layout.register_dialog_login, null);
+        ImageView wait_icon = (ImageView) view.findViewById(R.id.mate_wait_icon);
+        Animation anim = AnimationUtils.loadAnimation(this, R.anim.mate_wait_rotate);
+        anim.setInterpolator(new LinearInterpolator());
+        wait_icon.setAnimation(anim);
+        dialog_login.setContentView(view);
+    }
+
+    /**
+     * 验证码错误
+     */
+    private void showDialogErroCode() {
+        AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+        final AlertDialog dialog = builder2.show();
+        View view = LayoutInflater.from(this).inflate(R.layout.register_dialog_erro, null);
+        view.findViewById(R.id.but).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (dialog != null && dialog.isShowing()) {
+                    dialog.dismiss();
+                }
+            }
+        });
+        dialog.setContentView(view);
+        Window dialogWindow = dialog.getWindow();
+        dialogWindow.setGravity(Gravity.CENTER);
+        WindowManager m = getWindowManager();
+        Display d = m.getDefaultDisplay();
+        WindowManager.LayoutParams p = dialogWindow.getAttributes();
+        //p.height = (int) (d.getHeight()*0.6);
+        p.width = (int) (d.getWidth() * 0.95);
+        dialogWindow.setAttributes(p);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        CustomTitleBar.getTitleBar(this, "手机验证", true, false);
+        setContentView(R.layout.activity_register);
+        initView();
+
+        SMSSDK.registerEventHandler(eHandler);
+
+        Log.e("czhongzhi", "推送是否开启 -- " + FangApplication.device_token + " -- " + FangApplication.mPushAgent.isEnabled());
+    }
+
+    private void initView() {
+        ed_phone = (EditText) findViewById(R.id.ed_phone);
+        ed_code = (EditText) findViewById(R.id.ed_autocode);
+        but_getcode = (Button) findViewById(R.id.but_getcode);
+        but_register = (Button) findViewById(R.id.but_register);
+        findViewById(R.id.app_protocol).setOnClickListener(this);
+        but_getcode.setOnClickListener(this);
+        but_register.setOnClickListener(this);
+
+        ed_phone.setText(AppSharePrefManager.getInstance(this).getLastest_login_phone_num());
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.but_getcode://获取验证码
+                phString = ed_phone.getText().toString().trim();
+                Log.e("czhongzhi", phString);
+                if (TextUtils.isEmpty(phString)) {
+                    Toast.makeText(this, "手机号码不能为空", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (!HttpUtil.isNetworkAble(RegisterActivity.this)) {
+                    Toast.makeText(RegisterActivity.this, "网络不可用", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                //开启验证码倒计时，在倒计时时不能点击按钮
+                countDown();
+                SMSSDK.getVerificationCode("86", phString);
+                break;
+            case R.id.but_register://注册
+
+//                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+
+                vcString = ed_code.getText().toString().trim();
+                if (TextUtils.isEmpty(vcString)) {
+                    Toast.makeText(this, "验证码不能为空", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (!HttpUtil.isNetworkAble(RegisterActivity.this)) {
+                    Toast.makeText(RegisterActivity.this, "网络不可用", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                SMSSDK.submitVerificationCode("86", phString, vcString);
+                //开启dialog提示
+                showDialogLogin();
+                break;
+            case R.id.app_protocol://看房去服务协议
+                Toast.makeText(this, "看房去服务协议", Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                break;
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        eHandler = new EventHandler() {
+
+            @Override
+            public void afterEvent(int event, int result, Object data) {
+
+                Message msg = new Message();
+                msg.arg1 = event;
+                msg.arg2 = result;
+                msg.obj = data;
+                mHandler.sendMessage(msg);
+            }
+
+        };
+        SMSSDK.registerEventHandler(eHandler);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        SMSSDK.unregisterEventHandler(eHandler);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SMSSDK.unregisterEventHandler(eHandler);
+    }
+
+    private static final int RETRY_INTERVAL = 60;
+    private int time = RETRY_INTERVAL;
+    private boolean isReturnVerifyCode = false;
+
+    /**
+     * 倒数计时
+     */
+    private void countDown() {
+        runOnUIThread(new Runnable() {
+            public void run() {
+                time--;
+
+                if (time == 0 || isReturnVerifyCode) {
+                    but_getcode.setEnabled(true);
+                    but_getcode.setText("获取验证码");
+                    time = RETRY_INTERVAL;
+                } else {
+                    String unReceive = "<font color='#8f8f90'>" + time + "</font>S";
+                    but_getcode.setText(Html.fromHtml(unReceive));
+                    but_getcode.setEnabled(false);
+                    runOnUIThread(this, 1000);
+                }
+            }
+        }, 1000);
+    }
+
+    private void runOnUIThread(final Runnable paramRunnable, long paramLong) {
+        UIHandler.sendEmptyMessageDelayed(0, paramLong, new Handler.Callback() {
+            public boolean handleMessage(Message paramAnonymousMessage) {
+                paramRunnable.run();
+                return false;
+            }
+        });
+    }
+
+    private void runOnUIThread(final Runnable paramRunnable) {
+        UIHandler.sendEmptyMessage(0, new Handler.Callback() {
+            public boolean handleMessage(Message paramAnonymousMessage) {
+                paramRunnable.run();
+                return false;
+            }
+        });
+    }
+
+    private class RegOpenfire extends AsyncTask<String, Void, Boolean> {
+
+        @Override
+        protected Boolean doInBackground(String... params) {
+            int reg = XmppUtil.getInstance().regist(params[0], params[0]);
+            if (reg == 1 || reg == 2) {
+                Log.e("czhongzhi", "openfire 注册成功或已存在");
+                return true;
+            } else {
+                Log.e("czhongzhi", "openfire 注册失败");
+            }
+            return false;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean aBoolean) {
+//            if (aBoolean) {
+//                FangApplication.getInstance().handler.sendEmptyMessage(10011);
+//            }
+            //关闭dialog提示
+            if (dialog_login != null && dialog_login.isShowing())
+                dialog_login.dismiss();
+
+            startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+            RegisterActivity.this.finish();
+        }
+    }
+
+    /**
+     * 手机型号
+     *
+     * @return String
+     */
+    private String getAndroidType() {
+
+        return "手机厂商:" + android.os.Build.MANUFACTURER + "型号:" + android.os.Build.MODEL;
+    }
+}

@@ -1,0 +1,122 @@
+package com.inetgoes.fangdd.activity;
+
+import android.app.Activity;
+import android.content.Context;
+import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.RatingBar;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.inetgoes.fangdd.R;
+import com.inetgoes.fangdd.view.CustomTitleBar;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * 看房订单的Activity
+ */
+public class SeeHouseListActivity extends Activity {
+    private PullToRefreshListView listView;
+    private SeeHouseAdapter adapter;
+    private List<String> seehouses = new ArrayList<>();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        CustomTitleBar.getTitleBar(this, "看房订单", true, false);
+        setContentView(R.layout.activity_see_house_list);
+
+        listView = (PullToRefreshListView) findViewById(R.id.listView);
+        adapter = new SeeHouseAdapter(this, seehouses);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(SeeHouseListActivity.this, "position -- " + (position - 1), Toast.LENGTH_SHORT).show();
+            }
+        });
+        listView.setAdapter(adapter);
+        listView.setMode(PullToRefreshBase.Mode.BOTH);
+
+        for (int i = 0; i < 10; i++) {
+            seehouses.add(" o " + i);
+        }
+        adapter.notifyDataSetChanged();
+    }
+
+
+    private class SeeHouseAdapter extends BaseAdapter {
+        private List<String> list;
+        private LayoutInflater inflater;
+        private Context context;
+
+        private SeeHouseAdapter(Context context, List<String> list) {
+            this.context = context;
+            this.list = list;
+            this.inflater = LayoutInflater.from(context);
+        }
+
+        @Override
+        public int getCount() {
+            return list.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return list.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            ViewHolper vh = null;
+            if (convertView == null) {
+                vh = new ViewHolper();
+                convertView = inflater.inflate(R.layout.item_seehouse, parent, false);
+//                vh.broker_img = (ImageView) convertView.findViewById(R.id.broker_img);
+//                vh.broker_name = (TextView) convertView.findViewById(R.id.broker_name);
+//                vh.introduce = (TextView) convertView.findViewById(R.id.introduce);
+//                vh.broker_score = (TextView) convertView.findViewById(R.id.broker_score);
+//                vh.tadehouse = (TextView) convertView.findViewById(R.id.tadehouse);
+//                vh.sendmess = (TextView) convertView.findViewById(R.id.yuyueta);
+//                vh.status = (TextView) convertView.findViewById(R.id.trans_status);
+//                vh.time = (TextView)convertView.findViewById(R.id.trans_time);
+//                vh.broker_star = (RatingBar) convertView.findViewById(R.id.broker_star);
+                convertView.setTag(vh);
+            } else {
+                vh = (ViewHolper) convertView.getTag();
+            }
+
+            return convertView;
+        }
+
+        private class ViewHolper {
+//            private ImageView broker_img;
+//            private TextView broker_name;
+//            private TextView introduce;
+//            private TextView broker_score;
+//            private TextView tadehouse;
+//            private TextView sendmess;
+//            private TextView status;
+//            private TextView time;
+//            private RatingBar broker_star;
+        }
+    }
+
+
+}

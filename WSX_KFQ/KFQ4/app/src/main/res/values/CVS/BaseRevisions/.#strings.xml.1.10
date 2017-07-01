@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">看房去</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_welcome">欢迎页（启动页）</string>
+    <string name="title_activity_guide">引导页</string>
+    <string name="title_activity_register">注册页</string>
+
+    <!-- 一键注册 -->
+    <string name="register_intr">为了方便您与经纪人联系请你填写手机号码</string>
+    <string name="title_activity_mate_broker">匹配经纪人（确认）</string>
+    <string name="title_activity_broker_main">经纪人主页</string>
+    <string name="title_activity_my_message_main">我的消息</string>
+    <string name="title_activity_my_yuyue">我的预约</string>
+    <string name="title_activity_messageing">消息聊天页</string>
+    <string name="title_activity_see_house_list">看房订单</string>
+
+    <!-- 新添加 -->
+    <string name="title_activity_building_main">楼房主页</string>
+    <string name="title_activity_building_dan">订单主页</string>
+    <string name="title_activity_building_list">楼房列表</string>
+    <string name="title_activity_broker_evaluation">经纪人评价</string>
+    <string name="title_activity_set_message">设置-消息设置</string>
+    <string name="title_activity_set_user_info">个人中心</string>
+    <string name="title_activity_set_app">设置</string>
+    <string name="title_activity_set_law">法律条款</string>
+    <string name="title_activity_set_user_info2">修改单一信息</string>
+    <string name="title_activity_matching_buiding_list">房源列表</string>
+
+</resources>

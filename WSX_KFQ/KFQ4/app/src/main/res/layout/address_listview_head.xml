@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <!--<TextView -->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#E0E0E0"-->
+    <!--android:textColor="#454545"-->
+    <!---->
+    <!--android:paddingLeft="10dp"-->
+    <!--android:paddingTop="5dp"-->
+    <!--android:paddingBottom="5dp"-->
+    <!--android:text="⊙您当前的位置"-->
+    <!--/>-->
+    <!--<TextView-->
+    <!--android:id="@+id/listview_headTitle"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_vertical"-->
+    <!--android:gravity="center_vertical"-->
+    <!---->
+    <!--android:textColor="#000000"-->
+    <!--android:layout_marginLeft="5dp"-->
+    <!--android:paddingTop="10dp"-->
+    <!--android:paddingLeft="10dp"-->
+    <!--android:paddingBottom="10dp"-->
+    <!--android:text="北京"/>-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E0E0E0"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:text="现开通城市"
+        android:textColor="#454545" />
+
+    <com.inetgoes.fangdd.opencity.view.MyGridView
+        android:id="@+id/listview_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:listSelector="#00000000"
+        android:numColumns="3"
+        android:scrollbars="none"
+        android:verticalSpacing="10dp" />
+
+
+</LinearLayout>

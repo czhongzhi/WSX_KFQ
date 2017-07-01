@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/titlebar_height"
+    android:id="@+id/mate_wait_bar_2"
+    android:background="#f7f7f8"
+    android:visibility="gone"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/mate_wait_cancen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:text="取消预约"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/mate_wait_cancen_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="正在进行"
+        android:textColor="@color/divider_font"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

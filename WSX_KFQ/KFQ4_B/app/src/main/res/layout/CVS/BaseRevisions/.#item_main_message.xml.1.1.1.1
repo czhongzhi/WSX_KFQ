@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/messageing_mess_bottom"
+        android:padding="8dp">
+
+
+        <TextView
+            android:id="@+id/tv_message_time"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="11月19日  16:48"
+            android:textColor="@color/divider_font"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_message_evaluation"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_message_time"
+            android:layout_marginTop="5dp"
+            android:paddingRight="80dp"
+            android:text="您有一笔订单已完成,收到评价!您有一笔订单已完成,收到评价!"
+            android:textColor="@color/divider_font"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/iv_message_del"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/home_close" />
+
+
+    </RelativeLayout>
+</RelativeLayout>

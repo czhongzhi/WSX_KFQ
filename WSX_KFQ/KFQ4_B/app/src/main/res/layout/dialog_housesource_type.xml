@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/popupwin_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="18dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="14dp"
+            android:text="面积"
+            android:textColor="@color/divider_font"
+            android:textSize="18sp"
+            />
+
+
+        <EditText
+            android:id="@+id/et_house_area"
+            android:layout_width="0dp"
+            android:layout_height="41dp"
+            android:layout_weight="3"
+            android:background="@drawable/broker_item_info"
+            android:gravity="center_vertical"
+            android:inputType="number"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/divider_font_tint"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="32dp"
+            android:text="室"
+            android:textColor="@color/divider_font"
+            android:textSize="18sp"
+            />
+
+
+        <EditText
+            android:id="@+id/et_house_room"
+            android:layout_width="0dp"
+            android:layout_height="41dp"
+            android:layout_weight="3"
+            android:background="@drawable/broker_item_info"
+            android:gravity="center_vertical"
+            android:inputType="number"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/divider_font_tint"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="32dp"
+            android:text="厅"
+            android:textColor="@color/divider_font"
+            android:textSize="18sp"
+            />
+
+
+        <EditText
+            android:id="@+id/et_house_hall"
+            android:layout_width="0dp"
+            android:layout_height="41dp"
+            android:layout_weight="3"
+            android:background="@drawable/broker_item_info"
+            android:gravity="center_vertical"
+            android:inputType="number"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/divider_font_tint"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="32dp"
+            android:text="卫"
+            android:textColor="@color/divider_font"
+            android:textSize="18sp"
+            />
+
+
+        <EditText
+            android:id="@+id/et_house_toilet"
+            android:layout_width="0dp"
+            android:layout_height="41dp"
+            android:layout_weight="3"
+            android:background="@drawable/broker_item_info"
+            android:gravity="center_vertical"
+            android:inputType="number"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/divider_font_tint"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_divider_bg_select"
+            android:padding="10dp"
+            android:text="确定"
+            android:textColor="@color/divider_font_mid"
+            />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_divider_bg_select"
+            android:padding="10dp"
+            android:text="取消"
+            android:textColor="@color/divider_font_mid"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>

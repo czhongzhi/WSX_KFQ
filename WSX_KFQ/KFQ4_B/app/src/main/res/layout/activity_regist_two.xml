@@ -1,0 +1,243 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/content_bg"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:scrollbars="none"
+    tools:context="com.inetgoes.kfqbrokers.activity.RegistTwoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="注册提供经纪人服务"
+            android:textColor="@color/divider_font" />
+
+        <EditText
+            android:id="@+id/ed_brokername"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edittext_select_bg"
+            android:hint="姓名"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/divider_font_tint" />
+
+
+        <EditText
+            android:id="@+id/ed_id"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_below="@id/ed_phone"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edittext_select_bg"
+            android:hint="身份证号码"
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/divider_font_tint" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ed_id"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="身份证正面照"
+            android:textColor="@color/divider_font" />
+
+        <FrameLayout
+            android:id="@+id/fl_idimagebtu"
+            android:layout_width="fill_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/edittext_divider_bg">
+
+
+            <ImageView
+                android:id="@+id/iv_idimage"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@+id/iv_addidimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/join_pic" />
+
+        </FrameLayout>
+
+        <EditText
+            android:id="@+id/ed_password"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_below="@id/ed_phone"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edittext_select_bg"
+            android:hint="设置密码"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/divider_font_tint" />
+
+        <EditText
+            android:id="@+id/ed_topassword"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edittext_select_bg"
+            android:hint="确认密码"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/divider_font_tint" />
+
+        <EditText
+            android:id="@+id/ed_email"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edittext_select_bg"
+            android:hint="邮箱"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/divider_font_tint" />
+
+        <EditText
+            android:id="@+id/ed_city"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edittext_select_bg"
+            android:hint="城市"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/divider_font_tint" />
+
+        <EditText
+            android:id="@+id/ed_work"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edittext_select_bg"
+            android:hint="工作单位"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/divider_font_tint" />
+
+        <EditText
+            android:id="@+id/ed_recommendcode"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edittext_select_bg"
+            android:hint="推荐码"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/divider_font_tint" />
+
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="半身形象照"
+            android:textColor="@color/divider_font"
+            android:textSize="18sp" />
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/fl_addphoto"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/iv_verticalphoto"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/default_boy" />
+
+                <ImageView
+                    android:id="@+id/iv_annphoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/join_pic" />
+
+                <ImageView
+                    android:id="@+id/iv_photodelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:layout_margin="12dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/join_delete"
+                    android:visibility="gone" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/iv_exaphoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/join_exa" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/divider_font_mid"
+                    android:text="范例" />
+
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="真实照片才能通过审核"
+            android:textColor="@color/divider_font"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/broker_regist_bt"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_select_bg"
+            android:text="提交"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="18sp" />
+    </LinearLayout>
+</ScrollView>

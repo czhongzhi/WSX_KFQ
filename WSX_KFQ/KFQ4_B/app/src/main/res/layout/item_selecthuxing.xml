@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="7dp"
+        android:paddingLeft="11dp"
+        android:paddingRight="11dp"
+        android:paddingTop="7dp">
+
+        <ImageView
+            android:id="@+id/item_huxing_icon"
+            android:layout_width="100dp"
+            android:layout_height="75dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/broker_lou" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/item_huxing_icon"
+            android:orientation="vertical"
+            android:paddingLeft="10dp">
+
+
+            <TextView
+                android:id="@+id/item_huxing_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="二室"
+                android:textColor="@color/divider_font"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+
+                android:id="@+id/item_huxing_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="2房1厅1卫 约72㎡、85㎡"
+                android:textColor="@color/divider_font_mid"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>

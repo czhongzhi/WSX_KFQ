@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <!--<com.inetgoes.fangdd.view.MyGridView-->
+        <!--android:id="@+id/gridview"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="280dp"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:columnWidth="100dp"-->
+        <!--android:gravity="center"-->
+        <!--android:horizontalSpacing="5dp"-->
+        <!--android:listSelector="@android:color/transparent"-->
+        <!--android:numColumns="3"-->
+        <!--android:scrollbars="none"-->
+        <!--android:stretchMode="columnWidth"-->
+        <!--android:verticalSpacing="5dp">-->
+
+    <!--</com.inetgoes.fangdd.view.MyGridView>-->
+
+    <com.inetgoes.fangdd.view.MyListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:listSelector="@android:color/transparent">
+
+    </com.inetgoes.fangdd.view.MyListView>
+
+
+</RelativeLayout>
+
+

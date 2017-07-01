@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/broker_call_hint"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <com.inetgoes.fangdd.view.MyCircleImageView
+        android:id="@+id/broker_icon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="4dp"
+        android:src="@drawable/touxiang" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/broker_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="吉小及"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="@dimen/app_18"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/broker_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="15217721685"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="@dimen/app_14" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/introduce"
+            android:layout_marginTop="3dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RatingBar
+                android:id="@+id/broker_star"
+                style="@style/kfqRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:rating="4.5" />
+
+            <TextView
+                android:id="@+id/broker_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="6dp"
+                android:background="@drawable/button_divider_bg_select"
+                android:text="4.8"
+                android:textColor="@color/divider_font_mid"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/broker_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/book_call" />
+
+    <ImageView
+        android:id="@+id/broker_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/book_news" />
+
+
+</LinearLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="240dp"
+    android:background="@drawable/popupwin_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+
+    <TextView
+        android:layout_marginTop="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="是否确认删除"
+        android:textColor="@color/divider_font"
+        android:textSize="22sp"
+        />
+
+    <LinearLayout
+android:layout_marginTop="80dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_divider_bg_select"
+            android:padding="10dp"
+            android:text="确定"
+            android:textColor="@color/divider_font_mid"
+            />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_divider_bg_select"
+            android:padding="10dp"
+            android:text="取消"
+            android:textColor="@color/divider_font_mid"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>

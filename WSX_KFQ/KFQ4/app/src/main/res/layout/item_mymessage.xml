@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/mess_icon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="6dp"
+        android:src="@drawable/defaut_img" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:id="@+id/mess_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="3dp"
+            android:text="下午 1:50"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/mess_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="吉小及"
+            android:textColor="@color/divider_font"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/mess_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mess_name"
+            android:layout_marginTop="10dp"
+            android:ems="11"
+            android:singleLine="true"
+            android:text="您好，请看看前海时代，CEHHH"
+            android:textColor="@color/divider_font_mid" />
+
+        <TextView
+            android:id="@+id/mess_notloolnum"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/mess_time"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/mymessage_circle"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/white"
+            android:text="2" />
+
+    </RelativeLayout>
+
+</LinearLayout>

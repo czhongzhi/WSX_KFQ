@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_click"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingBottom="10dip"
+            android:paddingLeft="16dip"
+            android:paddingTop="10dip"
+            >
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/menu_right_collection"
+                />
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/img"
+                android:minWidth="120.0dip"
+                android:text="meun_01"
+                android:textColor="@color/leftmenu_font"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/myval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:layout_toLeftOf="@+id/arrow"
+                android:gravity="right"
+                android:maxLines="2"
+                android:maxWidth="120dp"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                />
+
+            <ImageView
+                android:visibility="invisible"
+                android:id="@+id/arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20.0dip"
+                android:src="@drawable/neighbourhood_icon_moredetails" />
+        </RelativeLayout>
+
+    </LinearLayout>

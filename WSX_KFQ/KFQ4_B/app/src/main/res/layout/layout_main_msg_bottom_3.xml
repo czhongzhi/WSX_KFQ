@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/p_bottom_layout_3"
+    android:visibility="gone"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/me_icon"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:src="@drawable/grab_boy" />
+
+            <TextView
+                android:id="@+id/me_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/me_icon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:text="吉吉"
+                android:textColor="@color/divider_font_mid"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/me_srcoe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/me_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="36dp"
+                android:text="3.8"
+                android:textColor="@color/divider_font_mid"
+                android:textSize="28sp" />
+
+        </RelativeLayout>
+
+
+
+
+        <TextView
+            android:id="@+id/broker_pk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="对比"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="24sp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="31dp" />
+
+        <RatingBar
+            android:id="@+id/broker_star"
+            style="@style/kfqRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:rating="4.5"
+            android:layout_below="@+id/broker_pk"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="服务星级"
+            android:textColor="@color/divider_font_mid"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/broker_star"
+            android:layout_centerHorizontal="true" />
+
+
+
+        <RelativeLayout
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/you_icon"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:src="@drawable/grab_boy" />
+
+            <TextView
+                android:id="@+id/you_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/you_icon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:text="吉吉"
+                android:textColor="@color/divider_font_mid"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/you_srcoe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/you_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="36dp"
+                android:text="3.8"
+                android:textColor="@color/divider_font_mid"
+                android:textSize="28sp" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

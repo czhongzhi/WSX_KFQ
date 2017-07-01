@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:paddingRight="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="17dp"
+            android:src="@drawable/notify_circle" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/icon"
+            android:background="@drawable/notify_item_bg"
+            android:orientation="vertical"
+            android:paddingBottom="8dp"
+            android:paddingLeft="22dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp">
+
+            <TextView
+                android:id="@+id/notify_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:text="【热门活动】"
+                android:textColor="@color/divider_font_mid" />
+
+            <TextView
+                android:id="@+id/notify_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:text="感谢您注册看房去，我们将竭诚为您提供优势到付款单即可将罚款单服务"
+                android:textColor="@color/divider_font_mid" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/notify_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="10dp"
+        android:text="2015-12-12 17:20:88"
+        android:textColor="@color/divider_font_mid"
+        android:textSize="12sp" />
+
+</LinearLayout>
